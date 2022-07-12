@@ -1,0 +1,19 @@
+{
+  "skills": {
+    "title": "Skills",
+    "items": [
+      {
+        "title": "Javascript",
+        "additionalInfo": ["React", "Node"]
+      },
+      {
+        "title": "Javascript",
+        "additionalInfo": ["React", "Node"]
+      }
+    ]
+  },
+  "welcome": "Welcome to our site, <0>kckam</0>",
+  "translation": {
+    "welcome": "Welcome to our site, <0>kckam</0>"
+  }
+}

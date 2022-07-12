@@ -1,0 +1,86 @@
+import styled from "styled-components";
+import breakpoints from "../../config/breakpoint";
+
+const { lg } = breakpoints;
+
+export const Styled = styled.footer`
+  padding: 1rem;
+  background: #000;
+  color: #fff;
+  padding: 100px 0 50px 0;
+
+  @media only screen and (${lg.down}) {
+    padding: 30px 0;
+  }
+
+  .footer-container {
+    .footer-elem-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .footer-elem {
+        &__title {
+          font-weight: bold;
+          font-size: 16px;
+          margin-bottom: 16px;
+        }
+
+        &__logo {
+          transform: translateY(-50%);
+        }
+
+        &__nav {
+          font-size: 14px;
+          line-height: 20px;
+          color: #aaaaaa;
+
+          &.multi-col {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: 63px;
+          }
+
+          > li {
+            &:not(:first-child) {
+              margin-top: 6px;
+            }
+          }
+        }
+      }
+
+      @media only screen and (${lg.down}) {
+        flex-direction: column;
+
+        .footer-elem {
+          &:not(:first-child) {
+            margin-top: 32px;
+          }
+
+          &__logo {
+            transform: translateY(0%);
+          }
+
+          &__nav {
+            &.multi-col {
+              grid-template-columns: 1fr;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer__nav {
+    margin-top: 1rem;
+    a {
+      color: #fff;
+    }
+  }
+
+  .footer__copyright {
+    font-size: 12px;
+    margin-top: 60px;
+    color: #aaaaaa;
+  }
+`;

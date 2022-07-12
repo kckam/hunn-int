@@ -1,0 +1,38 @@
+import i18n from "i18next";
+import Backend from "i18next-http-backend";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+
+const languageDetector = new LanguageDetector();
+let myDetector = {
+  name: "myDetectors",
+
+  lookup(options) {
+    const lang = window.location.pathname.split("/")[1];
+    return lang || "en";
+  },
+
+  cacheUserLanguage(lng, options) {},
+};
+
+languageDetector.addDetector(myDetector);
+
+export const LANGS = {
+  en: "English",
+  ["ms-MY"]: "Bahasa Malaysia",
+};
+
+i18n.use(Backend);
+
+i18n
+  .use(languageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: "en",
+    debug: true,
+    supportedLngs: ["en", "ms-MY"],
+    load: "currentOnly",
+    detection: {
+      order: ["myDetectors"],
+    },
+  });

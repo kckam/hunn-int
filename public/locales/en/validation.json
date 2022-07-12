@@ -1,0 +1,11 @@
+{
+  "skills": {
+    "title": "Skills",
+    "items": [
+      {
+        "title": "Javascript",
+        "additionalInfo": ["React", "Node"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "welcome": "Hello <0>{{title}}</0>",
+  "hello": "hello8",
+  "back": "back",
+  "item": "item only",
+  "item_other": "itemssss",
+
+  "general": {
+    "warning": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
+  },
+
+  "navs": {
+    "shop": "Shop",
+    "warranty-registration": "Warranty Registration",
+    "my-account": "My Account",
+    "contact-us": "Contact Us",
+    "language": "Language",
+
+    "hunn": "HUNN",
+    "faqs": "FAQS",
+    "terms-of-use-and-policy": "TERMS OF USE & POLICY",
+
+    "why-hunn": "Why Hunn?",
+    "general-enquiries": "General Enquiries",
+    "about-our-hunn-devices": "About Our Hunn Devices",
+    "product-care": "Product Care",
+    "payment": "Payment",
+    "shipping-and-delivery": "Shipping and Delivery",
+    "return-and-refund-policies": "Return and Refund Policies",
+    "warranty": "Warranty",
+    "privacy-notice-and-cookie": "Privacy Notice & Cookies",
+    "warranty-policy": "Warranty Policy",
+    "terms-of-use": "Terms of Use"
+  }
+}

@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./components/styles/Global";
+import Routes from "./Routes";
+import "./i18n";
+import { useTranslation } from "react-i18next";
+import ErrorBoundary from "./components/ErrorBoundary";
+import "./style.css";
+
+// const darkTheme = {
+//   body: "#000",
+//   text: "#fff",
+// };
+
+const StyledApp = styled.div``;
+
+const lightTheme = {
+  body: "#fff",
+  text: "#000",
+};
 
 function App() {
+  const { ready } = useTranslation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <ThemeProvider theme={lightTheme}>
+        <GlobalStyles />
+        <StyledApp>{ready && <Routes />}</StyledApp>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
 export default App;
+
+// <Trans i18nKey="welcome">
+//             <strong>{{ title: "BBC" }}</strong>
+//           </Trans>

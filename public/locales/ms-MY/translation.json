@@ -1,0 +1,11 @@
+{
+  "welcome": "<0>{{title}}</0> Hello",
+  "hello": "halo",
+  "back": "balik",
+  "item": "banyak",
+  "item_other": "memang banyak",
+
+  "navs": {
+    "shop": "Pandai"
+  }
+}
