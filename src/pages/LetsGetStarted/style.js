@@ -14,8 +14,8 @@ export const Styled = styled.section`
     .item-list {
       .item {
         position: relative;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 16px;
+        line-height: 22px;
 
         &:not(:first-child) {
           margin-top: 70px;
@@ -51,12 +51,13 @@ export const Styled = styled.section`
               position: absolute;
               left: -1.5em;
               content: counter(list, decimal);
-              background: #000;
+              background: #1f2122;
               color: #fff;
               width: 24px;
               height: 24px;
               text-align: center;
               font-weight: bold;
+              line-height: 24px;
             }
 
             > li {
@@ -82,6 +83,24 @@ export const Styled = styled.section`
                   }
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .container {
+      .item-list {
+        .item {
+          font-size: 14px;
+          line-height: 20px;
+
+          .item__header {
+            .item__title {
+              font-size: 16px;
+              line-height: 22px;
             }
           }
         }

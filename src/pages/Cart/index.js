@@ -114,7 +114,7 @@ function Home() {
         </ul>
 
         <div className="cart-consent consent-group">
-          <label className="center">
+          <label>
             <input type="checkbox" />
             <div className="consent__marker">
               <img

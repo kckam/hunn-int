@@ -8,7 +8,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import "./style.css";
 
 // const darkTheme = {
-//   body: "#000",
+//   body: "#1F2122",
 //   text: "#fff",
 // };
 
@@ -16,7 +16,7 @@ const StyledApp = styled.div``;
 
 const lightTheme = {
   body: "#fff",
-  text: "#000",
+  text: "#1F2122",
 };
 
 function App() {

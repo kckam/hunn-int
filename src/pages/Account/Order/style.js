@@ -19,6 +19,7 @@ export const Styled = styled.div`
         .order__order_sn {
           font-weight: bold;
           font-size: 24px;
+          line-height: 30px;
         }
 
         .order__status {
@@ -132,6 +133,19 @@ export const Styled = styled.div`
                 margin-top: 16px;
               }
             }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .orders {
+      .order {
+        .order__header {
+          .order__order_sn {
+            font-size: 18px;
+            line-height: 24px;
           }
         }
       }

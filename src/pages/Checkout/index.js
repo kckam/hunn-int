@@ -53,7 +53,7 @@ function Index() {
                   <div className="step__title">Billing address</div>
                   <div className="step__content">
                     <div className=" consent-group">
-                      <label>
+                      <label className="center">
                         <input
                           type="checkbox"
                           defaultChecked={params.sameAsBilling}
@@ -97,17 +97,24 @@ function Index() {
             </div>
           </li>
 
-          <li id="shipping-method">
+          {/* <li id="shipping-method">
             <div className="content-wrapper">
               <span className="step__title">Shipping Method</span>
 
               <div className="step__content">
                 <ul class="shipping-methods">
-                  <li class="">
+                  <li
+                    className={`selectable ${
+                      params.shippingMethod ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      setParams((prev) => ({ ...prev, shippingMethod: true }));
+                    }}
+                  >
                     <b>Standard Delivery</b>
                     <br />
                     <b>RM&nbsp;8.00</b>
-                    <br /> <br />7 Buniness Day
+                    <br /> <br />7 Business Day
                   </li>
                 </ul>
               </div>
@@ -120,23 +127,22 @@ function Index() {
 
               <div className="step__content">
                 <ul class="payment-methods">
-                  <li class="">
+                  <li
+                    className={`selectable ${
+                      params.paymentMethod ? "active" : ""
+                    }`}
+                    onClick={() => {
+                      setParams((prev) => ({ ...prev, paymentMethod: true }));
+                    }}
+                  >
                     <div class="text">
-                      <img
-                        src="https://dummyimage.com/600x400/000/fff"
-                        height="20"
-                        width="80"
-                        alt="Midtrans"
-                      />
-                      <br />
-                      <br />
                       <div class="sub">Midtrans</div>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
-          </li>
+          </li> */}
         </ul>
       </div>
 
@@ -177,10 +183,10 @@ function Index() {
         <div className="checkout__confitm-btn">
           <Button
             onClick={() => {
-              navigate("/checkout");
+              navigate("/thank-you");
             }}
           >
-            CHECKOUT
+            CONFIRM
           </Button>
         </div>
       </div>

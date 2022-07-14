@@ -9,25 +9,18 @@ function Home() {
 
   return (
     <Styled>
-      <Hero title={"WELCOME"} subtitle={"Sign in to say hello."} />
+      <Hero title={"???"} />
       <div className="login-form__wrapper container">
         <form>
           <div className="form__field">
             <input placeholder="Enter email" />
           </div>
-          <div className="form__field">
-            <input placeholder="Enter password" type="password" />
-          </div>
 
-          <Button className="login-button">LOGIN</Button>
-
-          <Link to="/forget-password" className="forget-password">
-            Forget password?
-          </Link>
+          <Button className="login-button">RESET PASSWORD</Button>
         </form>
 
         <div className="register">
-          Don’t have an account? <Link to="/register">Create Account</Link>
+          Or return to <Link to="/login">Sign In</Link>.
         </div>
       </div>
     </Styled>

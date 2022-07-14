@@ -1,17 +1,15 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import breakpoints from "../../config/breakpoint";
+
+const { sm } = breakpoints;
 
 export const Styled = styled.div`
   .addresses {
     .address {
       position: relative;
-      border: 1px solid transparent;
-
-      &.active {
-        border: 1px solid #000;
-      }
 
       &:not(:first-child) {
-        margin-top: 30px;
+        margin-top: 16px;
       }
 
       background: #f6f6f6;
@@ -38,6 +36,15 @@ export const Styled = styled.div`
 
             &:first-child {
               color: #29bcb9;
+            }
+          }
+
+          @media only screen and (${sm.down}) {
+            font-size: 14px;
+            line-height: 20px;
+
+            > li:last-child {
+              margin-left: 12px;
             }
           }
         }

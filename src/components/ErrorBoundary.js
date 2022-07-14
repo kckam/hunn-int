@@ -17,6 +17,8 @@ class ErrorBoundary extends React.Component {
     this.props.log?.action({
       msg: `${error.message} ${JSON.stringify(errorInfo)}`,
     });
+
+    alert(error.message);
   }
 
   render() {
@@ -26,7 +28,7 @@ class ErrorBoundary extends React.Component {
         <section
           className="loading-screen"
           style={{
-            background: `#000`,
+            background: `#1F2122`,
             color: "#fff",
             height: "100vh",
             display: "flex",

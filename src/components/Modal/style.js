@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import breakpoints from "../../config/breakpoint";
 import { animated } from "react-spring";
 
-const { sm } = breakpoints;
+const { sm, md } = breakpoints;
 
 export const Styled = styled(animated.div)`
   position: fixed;
@@ -33,6 +33,15 @@ export const Styled = styled(animated.div)`
       line-height: 30px;
       font-weight: bold;
       margin-bottom: 24px;
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .modal-content {
+      .modal__header {
+        font-size: 18px;
+        line-height: 24px;
+      }
     }
   }
 `;

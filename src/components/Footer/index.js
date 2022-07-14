@@ -17,7 +17,11 @@ export default function Index() {
       child: [
         {
           label: t("navs.why-hunn"),
-          link: "/",
+          link: "/why-hunn",
+        },
+        {
+          label: "Let's Get Started",
+          link: "/lets-get-started",
         },
       ],
     },

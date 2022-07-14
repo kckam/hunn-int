@@ -86,6 +86,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                     <label>ADL 1</label>
                     <select>
                       <option>ADL 1</option>
+                      <option>Johor</option>
                     </select>
                   </div>
                   <div className="error-msg">
@@ -136,7 +137,9 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
               {ADDRESSES.map((el) => (
                 <li
                   key={`adress-${el.id}`}
-                  className={`address ${selectedId === el.id ? "active" : ""}`}
+                  className={`address selectable ${
+                    selectedId === el.id ? "active" : ""
+                  }`}
                   onClick={() => {
                     cb(el.id);
                   }}
@@ -176,7 +179,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                 }}
               >
                 <div
-                  style={{ display: "inline-block" }}
+                  style={{ display: "inline-block", cursor: "pointer" }}
                   onClick={() => {
                     setShow(true);
                   }}

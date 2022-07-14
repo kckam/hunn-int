@@ -11,6 +11,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useTransition, useSpring, animated } from "react-spring";
+import { ResizeObserver } from "@juggle/resize-observer";
 import useMeasure from "react-use-measure";
 import Profile from "./Profile";
 import Address from "../../components/Address";
@@ -31,7 +32,9 @@ function Account() {
   const params = useParams();
   const location = useLocation();
   const [showAccountNav, setShowAccountNav] = useState(false);
-  const [ref, { height: navsHeight }] = useMeasure();
+  const [ref, { height: navsHeight }] = useMeasure({
+    polyfill: ResizeObserver,
+  });
 
   const transitions = useTransition(location.pathname, {
     from: { opacity: 0 },
@@ -50,7 +53,7 @@ function Account() {
   return (
     <Styled>
       <Hero title={"MY ACCOUNT"} />
-      <div className="inner-container">
+      <div className={`inner-container ${showAccountNav ? "active" : ""}`}>
         {!showAccountNav && (
           <div
             className="account__nav-chosen-wrapper"

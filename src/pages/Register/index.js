@@ -15,7 +15,7 @@ function Home() {
           "Create an account with us to enhance your experience with Hunn."
         }
       />
-      <div className="login-form__wrapper">
+      <div className="login-form__wrapper container">
         <form>
           <div className="form__field">
             <input placeholder="Enter email" autoComplete="off" />
@@ -52,6 +52,10 @@ function Home() {
 
           <Button className="login-button">CREATE</Button>
         </form>
+
+        <div className="register">
+          Already has an account? <Link to="/login">Sign In</Link>.
+        </div>
       </div>
     </Styled>
   );

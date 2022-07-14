@@ -3,6 +3,7 @@ import { StyledFaq } from "./style";
 import { Link, useLocation } from "react-router-dom";
 import i18n from "i18next";
 import { Title } from "../../components/styles";
+import Hero from "../../components/Hero";
 import { slugify, scrollTo } from "../../utils";
 
 function toggleQ(parent) {
@@ -55,11 +56,14 @@ function Faq() {
   }
 
   useEffect(() => {
-    scrollTo(hash);
+    if (hash) {
+      scrollTo(hash);
+    }
   });
 
   return (
     <StyledFaq>
+      <Hero title="QUESTIONS & TROUBLESHOOTING" />
       <div className="container">
         <ol className="item-list">
           {!contents

@@ -32,8 +32,8 @@ function Index() {
         (styles, show) =>
           show && (
             <animated.div style={styles}>
-              <Dropdown>
-                <div className="dropdown">
+              <Dropdown className="mini-cart__dropdown-wrapper">
+                <div className="mini-cart__dropdown">
                   <div className="left">
                     <img
                       src={

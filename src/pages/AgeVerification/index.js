@@ -16,14 +16,6 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
   });
 
   useEffect(() => {
-    if (showAgeVerification) {
-      document.querySelector("body").style.overflow = "hidden";
-    } else {
-      document.querySelector("body").style.overflow = "initial";
-    }
-  }, [showAgeVerification]);
-
-  useEffect(() => {
     document
       .querySelectorAll(".content__dob-section input")
       .forEach((target) => target.addEventListener("input", inputHandler));
@@ -35,10 +27,22 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
     };
   }, []);
 
+  useEffect(() => {
+    document.querySelector("body").style.overflow = "hidden";
+
+    return () => {
+      document.querySelector("body").style.overflow = "initial";
+    };
+  }, []);
+
   function inputHandler(e) {
     let nextId = document.getElementById(
       `input-${+e.target.getAttribute("id").split("-")[1] + 1}`
     );
+
+    if (isNaN(e.target.value)) {
+      return (e.target.value = "");
+    }
 
     if (nextId) {
       nextId.focus();
@@ -102,13 +106,20 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-1"
                       placeholder="D"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
+                      onKeyDown={(e) => {
+                        console.log(e.key);
+                      }}
                     />
                     <input
                       type="text"
                       id="input-2"
                       placeholder="D"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                   </div>
@@ -122,6 +133,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-3"
                       placeholder="M"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                     <input
@@ -129,6 +142,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-4"
                       placeholder="M"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                   </div>
@@ -142,6 +157,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-5"
                       placeholder="Y"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                     <input
@@ -149,6 +166,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-6"
                       placeholder="Y"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                     <input
@@ -156,6 +175,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-7"
                       placeholder="Y"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                     <input
@@ -163,6 +184,8 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
                       id="input-8"
                       placeholder="Y"
                       maxLength={1}
+                      min="0"
+                      pattern="\d*"
                       onFocus={(e) => e.target.select()}
                     />
                   </div>
@@ -170,7 +193,11 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
               </div>
             </div>
 
-            {error && <div className="error-msg">Please check your date.</div>}
+            {error && (
+              <div className="error-msg">
+                You have to be of legal age to enter this site.
+              </div>
+            )}
           </div>
         </Styled>
       )

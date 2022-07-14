@@ -23,7 +23,7 @@ export const Styled = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      color: #000;
+      color: #1f2122;
       overflow: hidden;
       white-space: nowrap;
       display: inline-block;

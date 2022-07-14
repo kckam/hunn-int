@@ -10,7 +10,7 @@ export const Styled = styled.div`
   height: 70px;
   color: #fff;
   z-index: 100;
-  background: #000;
+  background: #1f2122;
 
   .nav__item--active {
     color: #7ed6d4;

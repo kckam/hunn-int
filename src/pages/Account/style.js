@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { lg } = breakpoints;
+const { lg, sm } = breakpoints;
 
 export const Styled = styled.section`
   .inner-container {
@@ -33,6 +33,11 @@ export const Styled = styled.section`
         cursor: pointer;
         background: #fff;
         color: #7ed6d4;
+
+        @media only screen and (${sm.down}) {
+          font-size: 18px;
+          line-height: 24px;
+        }
       }
     }
 
@@ -57,6 +62,11 @@ export const Styled = styled.section`
           font-weight: bold;
           cursor: pointer;
 
+          @media only screen and (${sm.down}) {
+            font-size: 18px;
+            line-height: 24px;
+          }
+
           a {
             display: block;
           }
@@ -79,8 +89,18 @@ export const Styled = styled.section`
     @media only screen and (${lg.down}) {
       display: block;
 
-      .chevron {
-        display: block;
+      &.active {
+        .account__navs-wrapper {
+          .chevron {
+            display: block;
+          }
+        }
+      }
+
+      .account__nav-chosen-wrapper {
+        .chevron {
+          display: block;
+        }
       }
 
       .account-container {

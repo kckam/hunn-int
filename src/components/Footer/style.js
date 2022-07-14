@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { lg } = breakpoints;
+const { lg, xl } = breakpoints;
 
 export const Styled = styled.footer`
   padding: 1rem;
-  background: #000;
+  background: #1f2122;
   color: #fff;
   padding: 100px 0 50px 0;
 
@@ -23,6 +23,7 @@ export const Styled = styled.footer`
         &__title {
           font-weight: bold;
           font-size: 16px;
+          line-height: 22px;
           margin-bottom: 16px;
         }
 
@@ -39,6 +40,10 @@ export const Styled = styled.footer`
             display: grid;
             grid-template-columns: auto auto;
             grid-column-gap: 63px;
+
+            @media only screen and (${xl.down}) {
+              grid-column-gap: 14px;
+            }
           }
 
           > li {

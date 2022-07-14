@@ -35,19 +35,51 @@ export const Styled = styled.section`
             overflow: hidden;
           }
 
+          .selectable {
+            position: relative;
+            border: 1px solid transparent;
+
+            &.active {
+              border: 1px solid #1f2122;
+            }
+          }
+
           .shipping-methods,
           .payment-methods {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: -16px;
+
             > li {
+              flex: 0 1 calc(50% - 8px);
               line-height: 22px;
               position: relative;
               border: 1px solid transparent;
               background: #f6f6f6;
               padding: 24px;
+              margin-bottom: 16px;
+
+              &:nth-child(2n) {
+                margin-left: 16px;
+              }
+            }
+
+            @media only screen and (${sm.down}) {
+              flex-direction: column;
+
+              > li {
+                flex: 1;
+
+                &:nth-child(2n) {
+                  margin-left: 0;
+                }
+              }
             }
           }
 
           .billing-address {
-            margin-top: -16px;
+            margin-top: 16px;
 
             .step__content {
               .marker {
@@ -94,17 +126,18 @@ export const Styled = styled.section`
                   max-width: 100%;
                   font-size: 16px;
                   font-weight: 500;
-                  margin-right: 50px;
                   text-align: center;
                   padding: 0 12px;
+                  width: 200px;
                 }
 
                 button {
                   height: 36px;
-                  background: #000;
+                  background: #1f2122;
                   color: #fff;
                   font-size: 16px;
                   padding: 0 20px;
+                  border: 1px solid #000;
                 }
               }
 
@@ -118,9 +151,11 @@ export const Styled = styled.section`
 
                 .promo__input-group {
                   display: flex;
+
                   input {
                     flex: 1;
                     margin-right: -1px;
+                    box-sizing: border-box;
                   }
                 }
 
@@ -163,10 +198,6 @@ export const Styled = styled.section`
     > div {
       &.checkout__steps-wrapper {
         margin-right: 0;
-
-        .checkout__steps > li .billing-address {
-          margin-top: 16px;
-        }
       }
 
       &.checkout-summary {

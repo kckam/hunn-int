@@ -40,11 +40,11 @@ export default function Index() {
     },
     {
       label: t("navs.my-account"),
-      link: "/account",
+      link: "/account/profile",
     },
     {
       label: t("navs.contact-us"),
-      link: "/shop",
+      link: "/#contact-us",
     },
   ];
 
@@ -54,6 +54,10 @@ export default function Index() {
     } else {
       document.querySelector("body").style.overflow = "initial";
     }
+
+    return () => {
+      document.querySelector("body").style.overflow = "initial";
+    };
   }, [showMenu]);
 
   return (

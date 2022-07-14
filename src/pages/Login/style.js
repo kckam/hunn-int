@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import breakpoints from "../../config/breakpoint";
+
+const { sm } = breakpoints;
 
 export const Styled = styled.section`
   .login-form__wrapper {
     width: 450px;
+    max-width: 100%;
     margin: 48px auto;
 
     .form__field {
@@ -16,6 +20,7 @@ export const Styled = styled.section`
         text-align: center;
         font-size: 16px;
         font-weight: 500;
+        border: 1px solid #c6c6c6;
       }
     }
 

@@ -5,23 +5,17 @@ import breakpoints from "../../config/breakpoint";
 const { sm } = breakpoints;
 
 export const Styled = styled(animated.div)`
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999999;
-  background: #000 url("/images/hero/1.jpg") no-repeat;
+  background: #1f2122 url("/images/hero/1.jpg") no-repeat;
   background-size: cover;
   color: #fff;
-  display: flex;
   overflow: auto;
   padding: 48px 0;
+  min-height: 100vh;
 
   .content {
     width: 1000px;
     max-width: 100%;
-    margin: auto;
+    /* margin: auto; */
     padding: 0 16px;
     text-align: center;
 
@@ -85,14 +79,18 @@ export const Styled = styled(animated.div)`
 
         @media only screen and (${sm.down}) {
           flex-direction: column;
+          margin-top: 16px;
+
           .dob-section__input-wrapper {
             &:not(:first-child) {
               margin-left: 0;
-              margin-top: 30px;
+              margin-top: 16px;
             }
 
             .dob-section__input-label {
               text-align: center;
+              font-size: 14px;
+              line-height: 20px;
             }
 
             .dob-section__input {
@@ -105,6 +103,30 @@ export const Styled = styled(animated.div)`
 
     .error-msg {
       margin-top: 30px;
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .content {
+      &__logo {
+        img {
+          width: 130px;
+        }
+      }
+
+      &__disclaimer {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &__dob-section {
+        margin-top: 30px;
+
+        .dob-section__header {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
     }
   }
 `;

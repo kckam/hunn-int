@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { sm, xl, xxl } = breakpoints;
+const { md } = breakpoints;
 
 export const StyledShop = styled.section`
   .shop-items {
     margin: 48px auto;
     display: grid;
     grid-gap: 42px;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 
     &.limit {
       grid-template-columns: repeat(3, 33%);
@@ -54,6 +54,13 @@ export const StyledShop = styled.section`
         .shop-item__sale_price {
         }
       }
+    }
+  }
+
+  @media only screen and (${md.down}) {
+    .shop-items {
+      grid-gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
   }
 `;

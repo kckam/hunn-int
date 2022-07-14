@@ -1,59 +1,61 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Button, Form } from "../../components/styles";
 import RatingStars from "../../components/RatingStars";
 import { useSprings, animated } from "react-spring";
 import useMeasure from "react-use-measure";
+import { ResizeObserver } from "@juggle/resize-observer";
 import { AppContext } from "../../Routes";
 import Modal from "../../components/Modal";
+import { scrollTo } from "../../utils";
 
 let NUMBER_OF_REVIEW_IN_A_PAGE = 3;
 
 const REVIEWS = [
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "1Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 5,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "2Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "3Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "4Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "5Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "6Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "7Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "8Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
   {
-    title: "Perfect - Good Price, Fast Delivery and Fresh Battery",
+    title: "9Perfect - Good Price, Fast Delivery and Fresh Battery",
     rating: 3.7,
     text: "Seems to be brand new and handle gives bright light and normal battery life. Box was a bit dusty and aged. Not sure how old the unit was, but it appears new(not the box though) working well.",
   },
@@ -75,7 +77,7 @@ function Index() {
     headline: "",
     comment: "",
   });
-  const [ref, { width: innerWidth }] = useMeasure();
+  const [ref, { width: innerWidth }] = useMeasure({ polyfill: ResizeObserver });
   let totalPageOfReviews = Math.ceil(
     REVIEWS.length / NUMBER_OF_REVIEW_IN_A_PAGE
   );
@@ -182,7 +184,7 @@ function Index() {
             ADD TO CART
           </Button>
 
-          <div className="product__reviews-wrapper">
+          <div id="product-reviews" className="product__reviews-wrapper">
             <div className="product__review-header">
               <div className="product__review-overall">
                 <h2 className="product__review-count">
@@ -199,7 +201,7 @@ function Index() {
               </div>
 
               <div className="product__overall-rating">
-                <RatingStars value={3.5} />
+                <RatingStars value={3.6} />
                 <div className="product__overall-rating-score"> 3.9 Stars</div>
               </div>
             </div>
@@ -248,6 +250,8 @@ function Index() {
                     reviewApi.start(() => {
                       return { x: (currentReviewPage - 1) * -innerWidth };
                     });
+
+                    scrollTo("#product-reviews");
                   }
                 }}
               >
@@ -263,6 +267,8 @@ function Index() {
                     reviewApi.start(() => {
                       return { x: (currentReviewPage + 1) * -innerWidth };
                     });
+
+                    scrollTo("#product-reviews");
                   }
                 }}
               >
@@ -294,7 +300,11 @@ function Index() {
               />
             </div>
 
-            <Form>
+            <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+              }}
+            >
               <div className="form-row">
                 <div className="form-row__cell">
                   <div className="form-row__input">

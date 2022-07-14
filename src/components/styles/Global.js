@@ -5,10 +5,23 @@ const { lg, xl, xxl, xxxl } = breakpoints;
 
 const GlobalStyles = createGlobalStyle`
 
-body, input, button,ol li, textarea {
-	font-family: 'Montserrat', sans-serif;
+body {
+  position: relative;
 }
 
+body, input, button,ol li, textarea {
+	font-family: 'Montserrat', sans-serif;
+  color: #1F2122;
+  border-radius: 0px ;
+  
+}
+
+
+select, option {
+  background: #fff;
+  color: #000;
+  border-radius: 0px ;
+}
 
 
 strong, b {

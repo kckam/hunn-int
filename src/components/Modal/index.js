@@ -6,9 +6,9 @@ import { useTransition, animated } from "react-spring";
 
 function Index({ children, show, setShow }) {
   const transition = useTransition(show, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    from: { opacity: 0, y: -20 },
+    enter: { opacity: 1, y: 0 },
+    leave: { opacity: 0, y: -20 },
   });
 
   useEffect(() => {
@@ -17,6 +17,10 @@ function Index({ children, show, setShow }) {
     } else {
       document.querySelector("body").style.overflow = "initial";
     }
+
+    return () => {
+      document.querySelector("body").style.overflow = "initial";
+    };
   }, [show]);
 
   return transition(

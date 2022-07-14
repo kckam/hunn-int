@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { animated } from "react-spring";
+import breakpoints from "../../config/breakpoint";
+
+const { sm } = breakpoints;
 
 export const Styled = styled.div`
   .hero {
@@ -15,6 +17,10 @@ export const Styled = styled.div`
     text-align: center;
     padding: 0 14px;
 
+    &.extended {
+      /* min-height: 360px; */
+    }
+
     &__title {
       font-size: 48px;
       line-height: 54px;
@@ -25,6 +31,32 @@ export const Styled = styled.div`
       font-size: 18px;
       line-height: 24px;
       margin-top: 16px;
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .hero {
+      min-height: 220px;
+
+      &__title {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      &__subtitle {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  @media only screen and (${sm.down}) {
+    .hero {
+      &.extended {
+        justify-content: flex-start;
+        padding-top: 60px;
+        min-height: 330px;
+      }
     }
   }
 `;

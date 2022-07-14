@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { lg } = breakpoints;
+const { lg, md, sm } = breakpoints;
 
 export const StyledFaq = styled.section`
   .container {
@@ -38,6 +38,8 @@ export const StyledFaq = styled.section`
             text-decoration: underline;
 
             > li {
+              color: #29bcb9;
+
               cursor: pointer;
               &:not(:first-child) {
                 margin-left: 1rem;
@@ -62,6 +64,11 @@ export const StyledFaq = styled.section`
           border: 1px solid #c6c6c6;
           padding: 15px;
           margin-top: 24px;
+
+          @media only screen and (${sm.down}) {
+            font-size: 14px;
+            line-height: 20px;
+          }
 
           a {
             text-decoration: underline;

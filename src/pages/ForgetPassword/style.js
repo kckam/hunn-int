@@ -16,17 +16,16 @@ export const Styled = styled.section`
         width: 100%;
         text-align: center;
         font-size: 16px;
-        font-weight: 500;
         border: 1px solid #c6c6c6;
       }
     }
 
-    .login-consent {
-      margin-top: 24px;
-    }
-
-    .login-button {
-      margin-top: 24px;
+    .forget-password {
+      color: #29bcb9;
+      text-decoration: underline;
+      margin-top: 16px;
+      display: block;
+      text-align: center;
     }
 
     .register {
@@ -38,6 +37,14 @@ export const Styled = styled.section`
         text-decoration: underline;
         font-weight: bold;
       }
+    }
+
+    .login-consent {
+      margin-top: 24px;
+    }
+
+    .login-button {
+      margin-top: 24px;
     }
   }
 `;

@@ -5,10 +5,12 @@ import Hero from "../../components/Hero";
 import { Form, Button } from "../../components/styles";
 import { useTransition, useSpring, animated } from "react-spring";
 import useMeasure from "react-use-measure";
-import { Link } from "react-router-dom";
+import { ResizeObserver } from "@juggle/resize-observer";
+import { Link, useNavigate } from "react-router-dom";
 
 function Index() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [devices, setDevices] = useState([{ serial: "", img: "" }]);
   const transitions = useTransition(devices, {
     from: { opacity: 0, y: -10 },
@@ -16,7 +18,9 @@ function Index() {
     leave: { display: "none" },
     delay: 300,
   });
-  const [ref, { height: contentHeight }] = useMeasure();
+  const [ref, { height: contentHeight }] = useMeasure({
+    polyfill: ResizeObserver,
+  });
   const { height } = useSpring({
     from: { height: 0, opacity: 0, y: 0 },
     to: {
@@ -36,6 +40,7 @@ function Index() {
           autoComplete="off"
           onSubmit={(e) => {
             e.preventDefault();
+            navigate("/warranty-success");
           }}
         >
           <div className="body__left">

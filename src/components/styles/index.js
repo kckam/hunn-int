@@ -5,8 +5,8 @@ import { animated } from "react-spring";
 const { sm, md } = breakpoints;
 
 export const Button = styled.button`
-  background: ${({ invert }) => (invert ? "#fff" : "#000")};
-  color: ${({ invert }) => (invert ? "#000" : "#fff")};
+  background: ${({ invert }) => (invert ? "#fff" : "#1F2122")};
+  color: ${({ invert }) => (invert ? "#1F2122" : "#fff")};
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
@@ -14,6 +14,7 @@ export const Button = styled.button`
   max-width: 100%;
   padding: 12px;
   cursor: pointer;
+  border: 1px solid #000;
 
   @media only screen and (${sm.down}) {
     width: 100%;
@@ -124,7 +125,7 @@ export const RowItem = styled.li`
     display: flex;
     /* flex-wrap: wrap; */
     align-items: center;
-    flex: 0 0 114px;
+    flex: 0 1 114px;
 
     .item__image {
       margin-right: 16px;
@@ -191,12 +192,13 @@ export const RowItem = styled.li`
       align-items: initial;
 
       > div {
-        flex: 1 !important;
+        flex: initial !important;
         text-align: left !important;
 
         &.item__qty {
           margin: 12px 0;
           width: 120px;
+          max-width: 100%;
         }
       }
     }
@@ -222,6 +224,12 @@ export const Title = styled.h1`
   font-size: 48px;
   line-height: 54px;
   font-weight: bold;
+  color: #000;
+
+  @media only screen and (${sm.down}) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 `;
 
 export const PolicyPage = styled.section`
@@ -292,13 +300,27 @@ export const PolicyPage = styled.section`
         }
       }
     }
+
+    @media only screen and (${sm.down}) {
+      .term-item {
+        &__header {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+
+      .term-item__body {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
   }
 `;
 
 export const Dropdown = styled.div`
   position: absolute;
   background: #fff;
-  color: #000;
+  color: #1f2122;
   width: ${({ width = "220px" }) => width};
   left: 50%;
   transform: translateX(-50%);

@@ -1,9 +1,13 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import breakpoints from "../../config/breakpoint";
+
+const { xl, lg, md, sm } = breakpoints;
 
 export const Styled = styled.section`
   .container {
     margin: 48px auto;
     display: flex;
+    flex-direction: row;
 
     .product__left {
       flex: 0 1 574px;
@@ -170,7 +174,7 @@ export const Styled = styled.section`
             &:not(:first-child) {
               margin-left: 12px;
               padding-left: 12px;
-              border-left: 1px solid #000000;
+              border-left: 1px solid #1f2122;
             }
           }
         }
@@ -180,5 +184,92 @@ export const Styled = styled.section`
 
   .product__review-rating {
     margin-bottom: 24px;
+  }
+
+  @media only screen and (${lg.down}) {
+    .container {
+      .product__left {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  @media only screen and (${xl.down}) {
+    .container {
+      .product__right {
+        min-width: 400px;
+      }
+    }
+  }
+
+  @media only screen and (${md.down}) {
+    .container {
+      margin: 0 auto 48px auto;
+      flex-direction: column;
+
+      .product__left {
+        margin-right: 0;
+        background: #f6f6f6;
+        margin: 0 -14px;
+        flex: 1;
+
+        img {
+          width: 100%;
+          margin: auto;
+          display: block;
+        }
+      }
+
+      .product__right {
+        margin-top: 18px;
+        min-width: initial;
+
+        @media only screen and (${sm.down}) {
+          .product__price {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 8px;
+          }
+
+          .product__desc,
+          .product__specs {
+            margin-bottom: 30px;
+
+            &.product__specs {
+              .product__spec:not(:first-child) {
+                margin-top: 24px;
+              }
+            }
+          }
+
+          p,
+          h2,
+          h3,
+          .product__review-action {
+            font-size: 14px;
+            line-height: 20px;
+          }
+
+          .product__review-count {
+            font-size: 16px;
+            line-height: 22px;
+          }
+
+          .product__reviews-wrapper {
+            margin-top: 40px;
+          }
+
+          .product__colors-wrapper {
+            .product__colors {
+              flex-direction: column;
+
+              .product__color:not(:first-child) {
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
