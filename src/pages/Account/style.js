@@ -104,7 +104,7 @@ export const Styled = styled.section`
       }
 
       .account-container {
-        max-width: initial;
+        max-width: initial !important;
       }
 
       .account__nav-chosen-wrapper {

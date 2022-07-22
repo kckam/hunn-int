@@ -1,4 +1,6 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { useLog } from "@ysq-intl/react-redux-ysqstore";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class ErrorBoundary extends React.Component {
       msg: `${error.message} ${JSON.stringify(errorInfo)}`,
     });
 
-    alert(error.message);
+    toast.error(error.message);
   }
 
   render() {
@@ -46,5 +48,7 @@ class ErrorBoundary extends React.Component {
 }
 
 export default function WrapperErrorBoundary(props) {
-  return <ErrorBoundary children={props.children} />;
+  const { log } = useLog();
+
+  return <ErrorBoundary log={log} children={props.children} />;
 }

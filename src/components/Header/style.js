@@ -88,6 +88,8 @@ export const Styled = styled.div`
             justify-content: center;
             align-items: center;
             transform: translate(50%, -50%);
+            padding: 1px;
+            box-sizing: initial;
           }
         }
       }

@@ -36,6 +36,16 @@ export const StyledShop = styled.section`
         line-height: 22px;
         margin-top: 20px;
         color: #1f2122;
+
+        .shop-item__list-price {
+          color: #4d4e56;
+          font-size: 13px;
+          text-decoration: line-through;
+          margin-right: 12px;
+        }
+
+        .shop-item__sale-price {
+        }
       }
 
       &__ori_price {

@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import i18n from "i18next";
 import { Title } from "../../components/styles";
 import Hero from "../../components/Hero";
-import { slugify, scrollTo } from "../../utils";
+import { scrollTo } from "../../utils";
 
 function toggleQ(parent) {
   if (parent.classList.contains("item__question--active")) {
@@ -44,8 +44,8 @@ function Faq() {
       case "en":
         contents = await import("./lang/en");
         break;
-      case "ms-MY":
-        contents = await import("./lang/ms-MY");
+      case "ms":
+        contents = await import("./lang/ms");
         break;
       default:
         contents = await import("./lang/en");
@@ -70,11 +70,7 @@ function Faq() {
             ? "loading"
             : contents.map((el, i) => {
                 return (
-                  <li
-                    key={`q-${i}`}
-                    className="item"
-                    id={`${slugify(el.title)}`}
-                  >
+                  <li key={`q-${i}`} className="item" id={`${el.slug}`}>
                     <div className="item__header">
                       <h2 className="item__title">{el.title}</h2>
                       <ul className="item__actions">
@@ -122,7 +118,7 @@ function Faq() {
                           >
                             <h3>
                               <span>{index + 1}.</span>
-                              {question.q}
+                              <div>{question.q}</div>
                             </h3>
                           </div>
 

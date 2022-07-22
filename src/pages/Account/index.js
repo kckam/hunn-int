@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
+import { useAuth, useProfile } from "@ysq-intl/react-redux-ysqstore";
 import Hero from "../../components/Hero";
 import {
   Link,
@@ -10,6 +11,7 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useTransition, useSpring, animated } from "react-spring";
 import { ResizeObserver } from "@juggle/resize-observer";
 import useMeasure from "react-use-measure";
@@ -31,6 +33,8 @@ function Account() {
   const { t } = useTranslation();
   const params = useParams();
   const location = useLocation();
+  const { logout } = useAuth();
+  const { getProfile } = useProfile();
   const [showAccountNav, setShowAccountNav] = useState(false);
   const [ref, { height: navsHeight }] = useMeasure({
     polyfill: ResizeObserver,
@@ -41,7 +45,7 @@ function Account() {
     enter: { opacity: 1 },
     leave: { display: "none" },
   });
-  const { height, opacity, y } = useSpring({
+  const { height, opacity } = useSpring({
     from: { height: 0, opacity: 0, y: 0 },
     to: {
       height: showAccountNav ? navsHeight : 0,
@@ -50,8 +54,16 @@ function Account() {
     },
   });
 
+  useEffect(() => {
+    getProfile.action();
+  }, []);
+
   return (
     <Styled>
+      <Helmet>
+        <title>My account</title>
+        <meta name="description" content="My account" />
+      </Helmet>
       <Hero title={"MY ACCOUNT"} />
       <div className={`inner-container ${showAccountNav ? "active" : ""}`}>
         {!showAccountNav && (
@@ -92,23 +104,31 @@ function Account() {
                 <Link to={nav.link}>{nav.label}</Link>
               </li>
             ))}
-            <li className="account__nav">LOGOUT</li>
+            <li
+              className="account__nav"
+              onClick={() => {
+                logout.action();
+              }}
+            >
+              LOGOUT
+            </li>
           </ul>
           <div className="chevron"></div>
         </animated.div>
 
-        {transitions((styles, item) => (
-          <animated.div className="account__content" style={styles}>
-            <Routes>
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/address" element={<Address />} />
-              <Route path="/email" element={<Email />} />
-              <Route path="/password" element={<Password />} />
-              <Route path="/order" element={<Order />} />
-              <Route path="*" element={<Navigate to="/account/profile" />} />
-            </Routes>
-          </animated.div>
-        ))}
+        {getProfile.status.success &&
+          transitions((styles, item) => (
+            <animated.div className="account__content" style={styles}>
+              <Routes location={item}>
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/address" element={<Address />} />
+                <Route path="/email" element={<Email />} />
+                <Route path="/password" element={<Password />} />
+                <Route path="/order" element={<Order />} />
+                <Route path="*" element={<Navigate to="/account/profile" />} />
+              </Routes>
+            </animated.div>
+          ))}
       </div>
     </Styled>
   );

@@ -45,7 +45,8 @@ export const Styled = styled.section`
           }
 
           .shipping-methods,
-          .payment-methods {
+          .payment-methods,
+          .delivery-intervals {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -110,7 +111,7 @@ export const Styled = styled.section`
           &.checkout__promo {
             flex-direction: column;
             border-top: 1px solid #eeeeee;
-            padding-top: 30px;
+            padding-top: 18px;
 
             .promo__input-group-wrapper {
               display: flex;
@@ -132,6 +133,7 @@ export const Styled = styled.section`
                 }
 
                 button {
+                  cursor: pointer;
                   height: 36px;
                   background: #1f2122;
                   color: #fff;
@@ -150,12 +152,15 @@ export const Styled = styled.section`
                 align-items: initial;
 
                 .promo__input-group {
-                  display: flex;
+                  form {
+                    display: flex;
 
-                  input {
-                    flex: 1;
-                    margin-right: -1px;
-                    box-sizing: border-box;
+                    input {
+                      flex: 1;
+                      width: 100%;
+                      margin-right: -1px;
+                      box-sizing: border-box;
+                    }
                   }
                 }
 
@@ -171,10 +176,15 @@ export const Styled = styled.section`
             margin-top: 16px;
           }
 
+          &.summary-table__tax {
+            border-top: 1px solid #eeeeee;
+            padding-top: 18px;
+          }
+
           &.summary-table__total {
             font-weight: bold;
-            padding: 24px 0;
-            margin: 30px 0;
+            padding: 18px 0;
+            margin: 18px 0;
             border-top: 1px solid #eeeeee;
             border-bottom: 1px solid #eeeeee;
           }
@@ -206,4 +216,19 @@ export const Styled = styled.section`
       }
     }
   }
+`;
+
+export const PaymentProcessing = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+  color: #fff;
 `;

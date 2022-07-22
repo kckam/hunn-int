@@ -4,13 +4,16 @@ import { Link, useLocation } from "react-router-dom";
 import Warning from "../Warning";
 import { useTranslation } from "react-i18next";
 import { useTransition, animated } from "react-spring";
-import { LANGS } from "../../i18n";
 import i18n from "i18next";
 import MiniCart from "../MiniCart";
 import { Dropdown } from "../styles";
+import { useAuth, useCarts, useConfig } from "@ysq-intl/react-redux-ysqstore";
 
 export default function Index() {
   const { t } = useTranslation();
+  const { auth } = useAuth();
+  const { config } = useConfig();
+  const { carts, getCart } = useCarts();
   const { pathname } = useLocation();
   const [showLanguage, setShowLanguage] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -38,15 +41,26 @@ export default function Index() {
       label: t("navs.warranty-registration"),
       link: "/warranty-registration",
     },
-    {
-      label: t("navs.my-account"),
-      link: "/account/profile",
-    },
+    auth === true
+      ? {
+          label: t("navs.my-account"),
+          link: "/account/profile",
+        }
+      : {
+          label: "Login",
+          link: "/login",
+        },
     {
       label: t("navs.contact-us"),
       link: "/#contact-us",
     },
   ];
+
+  // useEffect(() => {
+  //   if (updateIntl.status.success) {
+  //     window.location.href = `/${el.lang}${pathname === "/" ? "" : pathname}`;
+  //   }
+  // }, [updateIntl.status]);
 
   useEffect(() => {
     if (showMenu) {
@@ -59,6 +73,10 @@ export default function Index() {
       document.querySelector("body").style.overflow = "initial";
     };
   }, [showMenu]);
+
+  useEffect(() => {
+    getCart.action();
+  }, []);
 
   return (
     <>
@@ -88,7 +106,9 @@ export default function Index() {
                 <li
                   key={`nav-${i}`}
                   className={`header-nav__item ${
-                    pathname.startsWith(nav.link) ? "nav__item--active" : ""
+                    pathname.includes(nav.link?.split("/")[1])
+                      ? "nav__item--active"
+                      : ""
                   }`}
                 >
                   <Link to={nav.link}>{nav.label}</Link>
@@ -112,21 +132,21 @@ export default function Index() {
                       <animated.div style={style}>
                         <Dropdown>
                           <ul>
-                            {Object.keys(LANGS).map((key) => (
+                            {config.languages.map((el) => (
                               <li
                                 className={`dropdown__item ${
-                                  i18n.language === key
+                                  i18n.language === el.lang
                                     ? "dropdown__item--active"
                                     : ""
                                 }`}
-                                key={`lang-${key}`}
+                                key={`lang-${el.lang}`}
                                 onClick={() => {
-                                  window.location.href = `/${key}${
+                                  window.location.href = `/${el.lang}${
                                     pathname === "/" ? "" : pathname
                                   }`;
                                 }}
                               >
-                                {LANGS[key]}
+                                {el.label}
                               </li>
                             ))}
                           </ul>
@@ -146,7 +166,13 @@ export default function Index() {
                     />
                   </Link>
 
-                  <span className="header-cart__counter">2</span>
+                  {!!carts?.items?.length && (
+                    <span className="header-cart__counter">
+                      {carts?.items?.reduce((acc, el) => {
+                        return acc + +el.qty;
+                      }, 0)}
+                    </span>
+                  )}
 
                   <MiniCart />
                 </li>
@@ -207,21 +233,21 @@ export default function Index() {
                       (style, show) =>
                         show && (
                           <animated.ul className="dropdown" style={style}>
-                            {Object.keys(LANGS).map((key) => (
+                            {config.languages.map((el) => (
                               <li
                                 className={`dropdown__item ${
-                                  i18n.language === key
+                                  i18n.language === el.lang
                                     ? "dropdown__item--active"
                                     : ""
                                 }`}
-                                key={`lang-${key}`}
+                                key={`lang-${el.lang}`}
                                 onClick={() => {
-                                  window.location.href = `/${key}${
+                                  window.location.href = `/${el.lang}${
                                     pathname === "/" ? "" : pathname
                                   }`;
                                 }}
                               >
-                                {LANGS[key]}
+                                {el.label}
                               </li>
                             ))}
                           </animated.ul>

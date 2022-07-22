@@ -4,6 +4,28 @@ import breakpoints from "../../../config/breakpoint";
 const { sm, md } = breakpoints;
 
 export const Styled = styled.div`
+  .no-result {
+    width: 300px;
+    max-width: 100%;
+
+    .no-result-header {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 25px;
+
+      a {
+        color: #7ed6d4;
+        text-decoration: underline;
+      }
+    }
+  }
+
   .orders {
     .order {
       &:not(:first-child) {
@@ -51,6 +73,12 @@ export const Styled = styled.div`
           .body__right {
             flex: 0 0 200px;
             text-align: right;
+
+            .order__detail {
+              > div {
+                flex: 1;
+              }
+            }
           }
         }
 

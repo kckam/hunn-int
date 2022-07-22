@@ -4,12 +4,14 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useTransition } from "react-spring";
 import moment from "moment";
+import { useAge } from "@ysq-intl/react-redux-ysqstore";
 
-function Index({ setShowAgeVerification, showAgeVerification }) {
+function Index() {
   const { t } = useTranslation();
+  const { verified, age: showAgeVerification } = useAge();
   const [error, setError] = useState(false);
 
-  const ageTransition = useTransition(showAgeVerification, {
+  const ageTransition = useTransition(!showAgeVerification, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -72,7 +74,9 @@ function Index({ setShowAgeVerification, showAgeVerification }) {
         return false;
       }
 
-      setShowAgeVerification(false);
+      verified.action();
+
+      window.localStorage.setItem("dob", dateString);
       return true;
     } catch (error) {
       // console.log("invalid date");

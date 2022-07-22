@@ -23,6 +23,10 @@ export default function Index() {
           label: "Let's Get Started",
           link: "/lets-get-started",
         },
+        {
+          label: "Store Locator",
+          link: "/store-locator",
+        },
       ],
     },
     {
@@ -41,8 +45,8 @@ export default function Index() {
           link: "/faq#shipping-and-delivery",
         },
         {
-          label: t("navs.return-and-refund-policies"),
-          link: "/faq#return-and-refund-policies",
+          label: t("navs.returns-and-refunds-policy"),
+          link: "/faq#returns-and-refunds-policy",
         },
         { label: t("navs.warranty"), link: "/faq#warranty" },
         { label: t("navs.my-account"), link: "/faq#my-account" },

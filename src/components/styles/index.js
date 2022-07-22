@@ -16,6 +16,11 @@ export const Button = styled.button`
   cursor: pointer;
   border: 1px solid #000;
 
+  &.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
   @media only screen and (${sm.down}) {
     width: 100%;
   }
@@ -43,6 +48,7 @@ export const Form = styled.form`
       }
 
       .form-row__input {
+        position: relative;
         label {
           display: block;
           font-weight: 500;
@@ -50,6 +56,7 @@ export const Form = styled.form`
           line-height: 20px;
           margin-bottom: 8px;
           white-space: nowrap;
+          text-transform: capitalize;
         }
       }
 
@@ -91,9 +98,12 @@ export const Form = styled.form`
     margin-top: 34px;
     display: flex;
     flex: 1;
-    > button {
+
+    > * {
+      flex: 1;
       cursor: pointer;
-      &:not(:first-child) {
+
+      &:not(:first-child):not(.loader) {
         margin-left: 14px;
       }
     }
@@ -111,12 +121,13 @@ export const Form = styled.form`
   }
 `;
 
-export const RowItem = styled.li`
+export const RowItem = styled(animated.li)`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #c6c6c6;
   padding-bottom: 24px;
   margin-bottom: 24px;
+  overflow: hidden;
 
   &:not(:first-child) {
   }

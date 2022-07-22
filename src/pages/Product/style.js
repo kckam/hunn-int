@@ -12,6 +12,16 @@ export const Styled = styled.section`
     .product__left {
       flex: 0 1 574px;
       margin-right: 140px;
+      overflow: hidden;
+
+      .slick-dots {
+        position: initial;
+        margin: 16px 0;
+
+        li button:before {
+          color: #888 !important;
+        }
+      }
     }
 
     .product__right {
@@ -23,11 +33,16 @@ export const Styled = styled.section`
         font-size: 16px;
         line-height: 22px;
         font-weight: bold;
+
+        &:empty {
+          display: none;
+        }
       }
 
       p {
         font-size: 16px;
         line-height: 22px;
+        white-space: pre-wrap;
       }
 
       .product__name {
@@ -48,11 +63,17 @@ export const Styled = styled.section`
           display: flex;
 
           .product__color {
-            display: flex;
-            align-items: center;
-            padding: 16px;
-            border: 1px solid transparent;
-            cursor: pointer;
+            text-transform: uppercase;
+            flex: 1;
+            /* max-width: 400px; */
+
+            > a {
+              display: flex;
+              align-items: center;
+              padding: 16px;
+              border: 1px solid transparent;
+              cursor: pointer;
+            }
 
             &:not(:first-child) {
               margin-left: 25px;
@@ -79,6 +100,16 @@ export const Styled = styled.section`
         font-size: 32px;
         margin-top: 20px;
         margin-bottom: 38px;
+
+        .shop-item__list-price {
+          color: #4d4e56;
+          font-size: 16px;
+          text-decoration: line-through;
+          margin-right: 12px;
+        }
+
+        .shop-item__sale-price {
+        }
       }
 
       .product__desc {
@@ -121,8 +152,6 @@ export const Styled = styled.section`
 
             .product__overall-rating-score {
               margin-left: 24px;
-              position: relative;
-              top: 2px;
             }
           }
         }
@@ -265,6 +294,7 @@ export const Styled = styled.section`
 
               .product__color:not(:first-child) {
                 margin-left: 0;
+                margin-top: 14px;
               }
             }
           }

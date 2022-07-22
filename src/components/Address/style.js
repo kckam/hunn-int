@@ -4,9 +4,24 @@ import breakpoints from "../../config/breakpoint";
 const { sm } = breakpoints;
 
 export const Styled = styled.div`
+  .no-result {
+    .no-result-header {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 25px;
+    }
+  }
+
   .addresses {
     .address {
       position: relative;
+      cursor: pointer;
 
       &:not(:first-child) {
         margin-top: 16px;

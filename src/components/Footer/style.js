@@ -24,7 +24,6 @@ export const Styled = styled.footer`
           font-weight: bold;
           font-size: 16px;
           line-height: 22px;
-          margin-bottom: 16px;
         }
 
         &__logo {
@@ -35,9 +34,10 @@ export const Styled = styled.footer`
           font-size: 14px;
           line-height: 20px;
           color: #aaaaaa;
+          margin-top: 16px;
+          display: grid;
 
           &.multi-col {
-            display: grid;
             grid-template-columns: auto auto;
             grid-column-gap: 63px;
 
@@ -47,9 +47,7 @@ export const Styled = styled.footer`
           }
 
           > li {
-            &:not(:first-child) {
-              margin-top: 6px;
-            }
+            margin-top: 6px;
           }
         }
       }
@@ -85,6 +83,7 @@ export const Styled = styled.footer`
 
   .footer__copyright {
     font-size: 12px;
+    line-height: 18px;
     margin-top: 60px;
     color: #aaaaaa;
   }

@@ -17,11 +17,6 @@ let myDetector = {
 
 languageDetector.addDetector(myDetector);
 
-export const LANGS = {
-  en: "English",
-  ["ms-MY"]: "Bahasa Malaysia",
-};
-
 i18n.use(Backend);
 
 i18n
@@ -30,7 +25,7 @@ i18n
   .init({
     fallbackLng: "en",
     debug: true,
-    supportedLngs: ["en", "ms-MY"],
+    supportedLngs: ["en", "ms"],
     load: "currentOnly",
     detection: {
       order: ["myDetectors"],

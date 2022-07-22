@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { sm, lg } = breakpoints;
+const { sm, md, lg } = breakpoints;
 
 export const Styled = styled.section`
-  .error-msg {
-    display: none;
-  }
-
   .container {
     margin: 48px auto;
 
@@ -81,6 +77,13 @@ export const Styled = styled.section`
         .section__add-more-device {
           display: flex;
           margin-top: 27px;
+
+          @media only screen and (${md.up}) {
+            .form__submit {
+              width: 220px;
+              margin-left: auto;
+            }
+          }
 
           > * {
             flex: 1;

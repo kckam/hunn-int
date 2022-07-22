@@ -8,6 +8,20 @@ export const Styled = styled.section`
   flex-direction: row;
   margin: 48px auto;
 
+  .no-result {
+    .no-result-header {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 25px;
+    }
+  }
+
   > div {
     &.cart-items {
       flex: 1;

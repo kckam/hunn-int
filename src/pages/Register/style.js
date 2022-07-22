@@ -25,7 +25,7 @@ export const Styled = styled.section`
       margin-top: 24px;
     }
 
-    .login-button {
+    .btn-wrapper {
       margin-top: 24px;
     }
 

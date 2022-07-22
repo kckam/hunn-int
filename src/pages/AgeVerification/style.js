@@ -106,6 +106,14 @@ export const Styled = styled(animated.div)`
     }
   }
 
+  @media only screen and (${sm.up}) {
+    display: flex;
+
+    .content {
+      margin: auto;
+    }
+  }
+
   @media only screen and (${sm.down}) {
     .content {
       &__logo {

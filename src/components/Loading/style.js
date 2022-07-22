@@ -10,7 +10,7 @@ export const Styled = styled(animated.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 1rem;
   background: rgba(0, 0, 0, 0.8);
   z-index: 999999;
   color: #fff;

@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 import breakpoints from "../../config/breakpoint";
 
-const { lg, xl, xxl, xxxl } = breakpoints;
+const { md, lg, xl, xxl, xxxl } = breakpoints;
 
 const GlobalStyles = createGlobalStyle`
 
@@ -79,7 +79,11 @@ img {
 .error-msg {
 	color: #FF1A46;
 	font-size: 14px;
-	line-height:20px ;
+	line-height:20px;
+
+  &:empty {
+    display: none;
+  }
 }
 
 .consent-group {
@@ -136,9 +140,49 @@ input, select, textarea {
   padding-left: 16px;
 }
 
+textarea {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .required {
   color: #FF0000;
 }
+
+.p-relative {
+  position: relative;
+}
+
+.Toastify__toast-container {
+  width: initial !important;
+  z-index: 9999999;
+
+  @media screen and (max-width: 480px) {
+    width: 100% !important;
+  }
+}
+
+.slick-dots {
+    li button:before {
+      font-size: 16px;
+      color: #ffffff !important;
+    }
+}
+
+.mobile-input{
+  &::before {
+    content: attr(data-prefix);
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
+  }
+
+  input {
+    padding-left: 50px;
+  }
+}
+
+
 `;
 
 export default GlobalStyles;

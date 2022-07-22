@@ -1,7 +1,7 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Dropdown, Button } from "../styles";
 import { AppContext } from "../../Routes";
 import { useTransition, animated } from "react-spring";
@@ -9,6 +9,7 @@ import _debounce from "lodash/debounce";
 
 function Index() {
   const { t } = useTranslation();
+  const location = useLocation();
   const { appState, appDispatch } = useContext(AppContext);
   const debouncedTimeout = useRef(
     _debounce(() => {
@@ -26,20 +27,22 @@ function Index() {
     },
   });
 
+  useEffect(() => {
+    appDispatch({ type: "HIDE_MINI_CART" });
+  }, [location.pathname]);
+
   return (
     <Styled key="cart" onClick={() => appDispatch({ type: "SHOW_MINI_CART" })}>
       {transition(
         (styles, show) =>
-          show && (
+          show &&
+          appState.addedProduct?.name && (
             <animated.div style={styles}>
               <Dropdown className="mini-cart__dropdown-wrapper">
                 <div className="mini-cart__dropdown">
                   <div className="left">
                     <img
-                      src={
-                        appState.addedProduct?.img ||
-                        "https://dummyimage.com/100x100/000/fff"
-                      }
+                      src={appState.addedProduct?.img}
                       width="64"
                       height="64"
                       className="product__image"
