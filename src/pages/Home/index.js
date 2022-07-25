@@ -138,7 +138,7 @@ function Home() {
 				</Slider>
 			</div>
 
-			<div className="enhancement-section">
+			<div id="enhancement" className="enhancement-section">
 				<div className="enhancement-section__inner-wrapper container">
 					<h2 className="enhancement-section__title">
 						ENCHANCING YOUR DAILY RITUAL
@@ -278,7 +278,7 @@ function Home() {
 							<span className="important">RM 59.90</span>.
 						</p>
 
-						<Link to="/product/12" className="buy-btn">
+						<Link to="/shop" className="buy-btn">
 							BUY NOW
 						</Link>
 					</div>
