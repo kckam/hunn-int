@@ -243,7 +243,7 @@ export const StyledHome = styled.section`
 				.deal__badge {
 					border: 1px solid #ff8c8c;
 					display: inline-block;
-					padding: 3px 5px;
+					padding: 5px 15px;
 					color: #ff8c8c;
 				}
 
