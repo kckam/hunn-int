@@ -125,14 +125,14 @@ function Home() {
 										}`,
 									}}
 								/>
+								<div
+									onClick={(e) => e.stopPropagation()}
+									style={{ lineHeight: 1, color: "#fff" }}
+									dangerouslySetInnerHTML={{
+										__html: DOMPurify.sanitize(el.custom_text),
+									}}
+								></div>
 							</Link>
-							<div
-								onClick={(e) => e.stopPropagation()}
-								style={{ lineHeight: 1, color: "#fff" }}
-								dangerouslySetInnerHTML={{
-									__html: DOMPurify.sanitize(el.custom_text),
-								}}
-							></div>
 						</div>
 					))}
 				</Slider>
