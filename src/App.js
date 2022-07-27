@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
 
-//2
+//3
 
 // const darkTheme = {
 //   body: "#1F2122",
