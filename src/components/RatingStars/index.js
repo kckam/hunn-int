@@ -66,6 +66,7 @@ function Index({ value, size = "sm", cb = () => {}, readOnly = true }) {
         height={SIZE[size]}
         viewBox="0 0 24 24"
         className="star-svg"
+        key={`rating-star-${i}`}
       >
         <path
           fill="currentColor"

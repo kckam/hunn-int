@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <Styled>
-      <Hero title={"???"} />
+      <Hero title={"???"} bg="auth" />
       <div className="login-form__wrapper container">
         <form
           onSubmit={(e) => {

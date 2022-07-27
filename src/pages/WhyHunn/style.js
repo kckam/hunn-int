@@ -49,19 +49,23 @@ export const Styled = styled.section`
         &:not(:first-child) {
           margin-left: 30px;
         }
+
+        img {
+          width: 100%;
+        }
       }
     }
   }
 
-  @media only screen and (${md.down}) {
+  @media only screen and (${lg.down}) {
     .container {
       flex-direction: column;
       align-items: center;
 
       > .content {
         flex: initial;
-        width: 360px;
-        max-width: 100%;
+        /* width: 360px;
+        max-width: 100%; */
         &:not(:first-child) {
           margin-left: 0;
           margin-top: 30px;
@@ -69,12 +73,13 @@ export const Styled = styled.section`
       }
 
       @media only screen and (${sm.down}) {
-        margin-top: -110px;
+        margin-top: -50px;
 
         > .content {
           h2 {
             font-size: 24px;
             line-height: 30px;
+            margin-top: 20px;
           }
 
           p {

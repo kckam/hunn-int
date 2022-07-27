@@ -3,7 +3,7 @@ import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { Dropdown, Button } from "../styles";
-import { AppContext } from "../../Routes";
+import { AppContext } from "../../AppProvider";
 import { useTransition, animated } from "react-spring";
 import _debounce from "lodash/debounce";
 

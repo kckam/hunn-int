@@ -63,7 +63,7 @@ function Faq() {
 
   return (
     <StyledFaq>
-      <Hero title="QUESTIONS & TROUBLESHOOTING" />
+      <Hero title="QUESTIONS & TROUBLESHOOTING" bg="faq" />
       <div className="container">
         <ol className="item-list">
           {!contents

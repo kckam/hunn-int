@@ -5,9 +5,13 @@ const { sm } = breakpoints;
 
 export const Styled = styled.div`
   .hero {
-    background-image: url("/images/hero/1.jpg");
-    min-height: 360px;
+    background-image: ${({ bg }) =>
+      bg
+        ? `url("/images/hero/${bg}-hero.jpg")`
+        : `url("/images/hero/default-hero.jpg")`};
+    min-height: 260px;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -18,7 +22,7 @@ export const Styled = styled.div`
     padding: 0 14px;
 
     &.extended {
-      /* min-height: 360px; */
+      min-height: 360px;
     }
 
     &__title {
@@ -55,7 +59,7 @@ export const Styled = styled.div`
       &.extended {
         justify-content: flex-start;
         padding-top: 60px;
-        min-height: 330px;
+        min-height: 230px;
       }
     }
   }

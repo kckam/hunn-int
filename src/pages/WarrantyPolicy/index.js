@@ -35,7 +35,7 @@ export default function Index() {
       {/* {t("item", { count: 1, ordinal: true })} */}
       <div className="container">
         <Title>WARRANTY POLICY</Title>
-        <p className="term-item__body">{contents}</p>
+        <div className="term-item__body">{contents}</div>
       </div>
     </PolicyPage>
   );

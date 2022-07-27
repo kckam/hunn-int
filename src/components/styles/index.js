@@ -250,16 +250,30 @@ export const PolicyPage = styled.section`
     a {
       color: #29bcb9;
       text-decoration: underline;
+      cursor: pointer;
     }
 
     h1 {
       margin-bottom: 32px;
     }
 
+    h3 {
+      font-weight: bold;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 0.5rem;
+    }
+
     .term-item__body {
       margin-top: 0.5rem;
       font-size: 16px;
       line-height: 22px;
+      overflow-wrap: break-word;
     }
 
     .term-item {
@@ -286,6 +300,10 @@ export const PolicyPage = styled.section`
         counter-increment: list;
         position: absolute;
         left: -1.5em;
+      }
+
+      &[type="disc"] {
+        list-style-type: disc;
       }
 
       &[type="a"],

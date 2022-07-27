@@ -19,13 +19,16 @@ function Home() {
   const [consent, setConsent] = useState(false);
   const debouncedAddtoCart = useRef(_debounce(addToCart.action, 500));
 
-  const transitions = useTransition(items, {
-    keys: (item) => `item-anim-${item.cid}`,
-    from: { opacity: 0, y: -10 },
-    enter: { opacity: 1, y: 0 },
-    leave: { opacity: 0, y: -10 },
-    delay: 300,
-  });
+  const transitions = useTransition(
+    items.filter((el) => el.qty > 0),
+    {
+      keys: (item) => `item-anim-${item.cid}`,
+      from: { opacity: 0, y: -10 },
+      enter: { opacity: 1, y: 0 },
+      leave: { opacity: 0, y: -10 },
+      delay: 300,
+    }
+  );
 
   useEffect(() => {
     if (addToCart.status.success) {
@@ -38,10 +41,10 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    if (carts?.items?.length) {
+    if (getCart.status.success) {
       setItems(carts.items);
     }
-  }, [carts]);
+  }, [getCart.status.success]);
 
   useEffect(() => {
     items.map((item, i) => {

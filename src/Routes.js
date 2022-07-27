@@ -1,10 +1,4 @@
-import React, {
-  Suspense,
-  useState,
-  createContext,
-  useReducer,
-  useEffect,
-} from "react";
+import React, { Suspense, useEffect } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -19,7 +13,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import AgeVerification from "./pages/AgeVerification";
-import reducer from "./reducers";
 import {
   useConfig,
   useAuth,
@@ -29,6 +22,7 @@ import {
   useBanners,
 } from "@ysq-intl/react-redux-ysqstore";
 import { Helmet } from "react-helmet";
+import AppProvider from "./AppProvider";
 const Faq = React.lazy(() => import("./pages/Faq"));
 const TermsOfUse = React.lazy(() => import("./pages/TermsOfUse"));
 const WarrantyPolicy = React.lazy(() => import("./pages/WarrantyPolicy"));
@@ -47,14 +41,9 @@ const WarrantyRegistration = React.lazy(() =>
 );
 const LetsGetStarted = React.lazy(() => import("./pages/LetsGetStarted"));
 const WhyHunn = React.lazy(() => import("./pages/WhyHunn"));
+const PrivacyNotice = React.lazy(() => import("./pages/PrivacyNotice"));
 
 const ResultPage = React.lazy(() => import("./components/ResultPage"));
-
-export const AppContext = createContext();
-const initialAppState = {
-  showMiniCart: false,
-  addedProduct: null,
-};
 
 const StyledContainer = styled.div`
   position: relative;
@@ -78,6 +67,7 @@ function Web() {
         <Route path={`/shop`} element={<Shop />} />
         <Route path={`/cart`} element={<Cart />} />
         <Route path={`/faq`} element={<Faq />} />
+        <Route path={`/privacy-notice`} element={<PrivacyNotice />} />
         <Route path={`/terms-of-use`} element={<TermsOfUse />} />
         <Route path={`/tracking`} element={<Tracking />} />
         <Route path={`/warranty-policy`} element={<WarrantyPolicy />} />
@@ -126,7 +116,8 @@ function Web() {
         </>
       ) : (
         <>
-          <Route path="/account/*" element={<Account />} />
+          {/* <Route path="/account/*" element={<Account />} /> */}
+          <Route path={`/account/*`} element={<Navigate to={"/login"} />} />
           <Route path={`/login`} element={<Login />} />
           <Route path={`/register`} element={<Register />} />
           <Route path={`/forget-password`} element={<ForgetPassword />} />
@@ -140,7 +131,6 @@ function Web() {
 
 function WebRoutes() {
   const { age: showAgeVerification } = useAge();
-  const [appState, appDispatch] = useReducer(reducer, initialAppState);
   const { bootstrap, init } = useBootstrap();
   const { getProducts } = useProducts();
   const { config, updateIntl } = useConfig();
@@ -170,17 +160,17 @@ function WebRoutes() {
       <BrowserRouter
         basename={`${
           config?.languages
-            .map((el) => el.lang)
+            ?.map((el) => el.lang)
             .includes(window.location.pathname.split("/")[1])
             ? window.location.pathname.split("/")[1]
             : ""
         }`}
       >
-        <AppContext.Provider value={{ appState, appDispatch }}>
+        <AppProvider>
           <Helmet
             htmlAttributes={{ lang: config.default_language }}
-            titleTemplate="Hunn Internatianal - %s"
-            defaultTitle="Hunn Internatianal"
+            titleTemplate="Hunn International - %s"
+            defaultTitle="Hunn International"
           >
             {config?.languages?.map((locale) => (
               <link
@@ -202,7 +192,7 @@ function WebRoutes() {
           </StyledContainer>
 
           <Footer />
-        </AppContext.Provider>
+        </AppProvider>
       </BrowserRouter>
     </article>
   );

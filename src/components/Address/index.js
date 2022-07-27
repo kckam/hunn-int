@@ -40,6 +40,8 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
   });
   const inputHandler = useInput(setInput);
 
+  console.log("Address reran");
+
   useEffect(() => {
     getAddresses.action();
   }, []);

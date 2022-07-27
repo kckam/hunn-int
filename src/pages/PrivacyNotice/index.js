@@ -34,7 +34,7 @@ export default function Index() {
     <PolicyPage>
       {/* {t("item", { count: 1, ordinal: true })} */}
       <div className="container">
-        <Title>TERMS OF USE</Title>
+        <Title>PRIVACY NOTICE</Title>
         <ul className="term-list">
           {!contents
             ? "loading"

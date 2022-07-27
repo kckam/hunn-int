@@ -56,7 +56,7 @@ export default function Index() {
       label: t("navs.terms-of-use-and-policy"),
       link: "",
       child: [
-        { label: t("navs.privacy-notice-and-cookie"), link: "" },
+        { label: t("navs.privacy-notice-and-cookie"), link: "/privacy-notice" },
         { label: t("navs.warranty-policy"), link: "/warranty-policy" },
         { label: t("navs.terms-of-use"), link: "/terms-of-use" },
       ],

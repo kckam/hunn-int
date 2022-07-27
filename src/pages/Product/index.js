@@ -15,7 +15,7 @@ import {
 } from "@ysq-intl/react-redux-ysqstore";
 import Slider from "react-slick";
 import { toast } from "react-toastify";
-import { AppContext } from "../../Routes";
+import { AppContext } from "../../AppProvider";
 import Modal from "../../components/Modal";
 import { scrollTo } from "../../utils";
 import usePriceFormat from "../../hooks/usePriceFormat";
@@ -216,33 +216,6 @@ function Index() {
                   <p>{el.desc}</p>
                 </li>
               ))}
-              {/* <li>
-                <h2></h2>
-                <p>
-                  User-friendly and durable, the Hunn Model M is designed to
-                  make the transition into a smarter alternative fuss-free.
-                  <br />
-                  <br />
-                  The device features an even heating system which delivers
-                  maximum satisfaction with every use. It also incorporates a
-                  casing for protection against heat or scratches.
-                </p>
-              </li>
-              <li className="product__spec">
-                <h2>What’s in the box</h2>
-
-                <p>
-                  HUNN Model M Device <br />
-                  HUNN cleaning brush <br />
-                  Charging cable
-                </p>
-              </li>
-
-              <li className="product__spec">
-                <h2>Dimensions</h2>
-
-                <p>21 x 17.5 x 92mm</p>
-              </li> */}
             </ul>
 
             <div className="p-relative">

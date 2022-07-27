@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <Styled>
-      <Hero title={"WELCOME"} subtitle={"Sign in to say hello."} />
+      <Hero title={"WELCOME"} subtitle={"Sign in to say hello."} bg="auth" />
       <div className="login-form__wrapper container">
         <form
           onSubmit={(e) => {

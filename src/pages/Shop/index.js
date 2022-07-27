@@ -16,10 +16,11 @@ function Home() {
       <Hero
         title={"BEGIN YOUR JOURNEY"}
         subtitle={"Let’s get shopping with Hunn."}
+        bg="shop"
       />
       <ul className={`shop-items container ${true ? "" : "limit"}`}>
         {products.map((product) => (
-          <li className="shop-item">
+          <li className="shop-item" key={`product-${product.id}`}>
             <Link to={`/product/${product.id}`}>
               <img
                 src={

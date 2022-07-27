@@ -17,6 +17,11 @@ import "./style.css";
 //   text: "#fff",
 // };
 
+/**
+ * Memo, inputhandler, seo
+ *
+ */
+
 const StyledApp = styled.div``;
 
 const lightTheme = {

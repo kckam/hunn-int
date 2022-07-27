@@ -31,6 +31,7 @@ function Home() {
         subtitle={
           "Create an account with us to enhance your experience with Hunn."
         }
+        bg="auth"
       />
       <div className="login-form__wrapper container">
         <form

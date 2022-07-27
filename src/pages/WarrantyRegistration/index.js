@@ -62,6 +62,7 @@ function Index() {
       <Hero
         title={"SECURE YOUR HUNN DEVICE"}
         subtitle={"Register your warranty with us."}
+        bg="warranty"
       />
       <div className="container">
         <Form

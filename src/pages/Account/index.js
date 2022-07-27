@@ -64,7 +64,7 @@ function Account() {
         <title>My account</title>
         <meta name="description" content="My account" />
       </Helmet>
-      <Hero title={"MY ACCOUNT"} />
+      <Hero title={"MY ACCOUNT"} bg="account" />
       <div className={`inner-container ${showAccountNav ? "active" : ""}`}>
         {!showAccountNav && (
           <div

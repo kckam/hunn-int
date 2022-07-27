@@ -20,8 +20,8 @@ function Index() {
       case "en":
         contents = await import("./lang/en");
         break;
-      case "ms-MY":
-        contents = await import("./lang/ms-MY");
+      case "ms":
+        contents = await import("./lang/ms");
         break;
       default:
         contents = await import("./lang/en");
