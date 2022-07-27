@@ -56,7 +56,3 @@ function App() {
 }
 
 export default App;
-
-// <Trans i18nKey="welcome">
-//             <strong>{{ title: "BBC" }}</strong>
-//           </Trans>
