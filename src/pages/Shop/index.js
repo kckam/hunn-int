@@ -14,8 +14,8 @@ function Home() {
   return (
     <StyledShop>
       <Hero
-        title={"BEGIN YOUR JOURNEY"}
-        subtitle={"Let’s get shopping with Hunn."}
+        title={t("page.shop.title")}
+        subtitle={t("page.shop.subtitle")}
         bg="shop"
       />
       <ul className={`shop-items container ${true ? "" : "limit"}`}>

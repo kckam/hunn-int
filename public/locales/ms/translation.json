@@ -1,11 +1,41 @@
 {
-  "welcome": "<0>{{title}}</0> Hello",
-  "hello": "halo",
-  "back": "balik",
-  "item": "banyak",
-  "item_other": "memang banyak",
+  "general": {
+    "warning": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
+  },
 
   "navs": {
-    "shop": "Pandai"
+    "shop": "Pandai",
+    "warranty-registration": "Warranty Registration",
+    "my-account": "My Account",
+    "contact-us": "Contact Us",
+    "language": "Language",
+
+    "hunn": "HUNN",
+    "faqs": "FAQS",
+    "terms-of-use-and-policy": "TERMS OF USE & POLICY",
+
+    "why-hunn": "Why Hunn?",
+    "general-enquiries": "General Enquiries",
+    "about-our-hunn-devices": "About Our Hunn Devices",
+    "product-care": "Product Care",
+    "payment": "Payment",
+    "shipping-and-delivery": "Shipping and Delivery",
+    "returns-and-refunds-policy": "Returns and Refunds Policy",
+    "warranty": "Warranty",
+    "privacy-notice-and-cookie": "Privacy Notice & Cookies",
+    "warranty-policy": "Warranty Policy",
+    "terms-of-use": "Terms of Use"
+  },
+
+  "page": {
+    "shop": {
+      "title": "BEGIN YOUR JOURNEY",
+      "subtitle": "Let’s get shopping with Hunn."
+    },
+    "cart": {
+      "consent": "M continuing to check out, you are agreeing to our <0>Malay</0> and <1>Bahasa</1>.",
+      "item": "{{count}} item-",
+      "item_many": "{{count}} bb items"
+    }
   }
 }

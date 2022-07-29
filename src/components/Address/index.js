@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
 import { Form, Button } from "../styles";
@@ -39,8 +39,6 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
     leave: { display: "none" },
   });
   const inputHandler = useInput(setInput);
-
-  console.log("Address reran");
 
   useEffect(() => {
     getAddresses.action();
@@ -425,4 +423,4 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
   );
 }
 
-export default Index;
+export default memo(Index);

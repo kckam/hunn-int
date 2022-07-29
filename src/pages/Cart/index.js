@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Styled } from "./style";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, RowItem } from "../../components/styles";
 import usePriceFormat from "../../hooks/usePriceFormat";
@@ -314,11 +314,18 @@ function Home() {
             <ul className="summary-table">
               <li className="summary-table__row">
                 <div>
-                  Subtotal (
-                  {carts.items?.reduce((acc, el) => {
-                    return acc + +el.qty;
-                  }, 0)}{" "}
-                  items)
+                  Subtotal{" "}
+                  {(() => {
+                    let count = carts.items?.reduce((acc, el) => {
+                      return acc + +el.qty;
+                    }, 0);
+
+                    return `(${
+                      count > 1
+                        ? t("page.cart.item_many", { count })
+                        : t("page.cart.item", { count })
+                    })`;
+                  })()}
                 </div>
                 <div>{priceFormat(carts?.amounts?.total)}</div>
               </li>
@@ -355,9 +362,10 @@ function Home() {
                   />
                 </div>
                 <p>
-                  By continuing to check out, you are agreeing to our{" "}
-                  <Link to="/">Terms of Use</Link> and{" "}
-                  <Link to="/">Privacy Notice</Link>.
+                  <Trans i18nKey="page.cart.consent">
+                    <Link to="/terms-of-use">Terms of Use</Link>
+                    <Link to="/privacy-notice">Privacy Notice</Link>
+                  </Trans>
                 </p>
               </label>
             </div>

@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Styled, PaymentProcessing } from "./style";
-import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+// import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import usePriceFormat from "../../hooks/usePriceFormat";
 import { Button } from "../../components/styles";
 import Address from "../../components/Address";
@@ -16,9 +16,10 @@ import {
 import { toast } from "react-toastify";
 import LoadingBtn from "../../components/LoadingBtn";
 import moment from "moment";
+import _memoize from "lodash/memoize";
 
 function Index() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const navigate = useNavigate();
   const { profile } = useProfile();
   const { config } = useConfig();
@@ -33,7 +34,6 @@ function Index() {
     shippingAddress: null,
     billingAddress: null,
     shippingMethod: null,
-    paymentMethod: null,
     paymentMethod: null,
     deliveryIntervals: null,
 
@@ -109,7 +109,7 @@ function Index() {
         payment_gateway_id: params.paymentMethod,
         courier_id: params.shippingMethod,
         delivery_intervals_id: shippingMethods.find(
-          (el) => el.id == params.shippingMethod
+          (el) => el.id === params.shippingMethod
         )?.delivery_intervals?.length
           ? params.deliveryIntervals
           : -1,
@@ -145,6 +145,14 @@ function Index() {
     }
   }, [paymentRef.current]);
 
+  const addressCb = useCallback(
+    _memoize(
+      (addressType) => (value) =>
+        setParams((prev) => ({ ...prev, [addressType]: value }))
+    ),
+    []
+  );
+
   return (
     <Styled className="container">
       {loadingScreen && (
@@ -169,9 +177,7 @@ function Index() {
                 <Address
                   fullWidth={true}
                   selectedId={params.shippingAddress}
-                  cb={(value) => {
-                    setParams((prev) => ({ ...prev, shippingAddress: value }));
-                  }}
+                  cb={addressCb("shippingAddress")}
                 />
 
                 <div className="billing-address">
@@ -209,12 +215,7 @@ function Index() {
                     <Address
                       fullWidth={true}
                       selectedId={params.billingAddress}
-                      cb={(value) => {
-                        setParams((prev) => ({
-                          ...prev,
-                          billingAddress: value,
-                        }));
-                      }}
+                      cb={addressCb("billingAddress")}
                     />
                   </div>
                 )}
@@ -265,14 +266,15 @@ function Index() {
                   )}
 
                   {params.shippingMethod &&
-                    shippingMethods.find((el) => el.id == params.shippingMethod)
-                      ?.delivery_intervals && (
+                    shippingMethods.find(
+                      (el) => el.id === params.shippingMethod
+                    )?.delivery_intervals && (
                       <div>
                         <br />
                         <br />
                         <b>
                           {shippingMethods?.find(
-                            (el) => el.id == params.shippingMethod
+                            (el) => el.id === params.shippingMethod
                           )?.type_id === 1
                             ? "Collection Time"
                             : "Delivery Time"}
@@ -286,7 +288,7 @@ function Index() {
                           style={{ height: "250px", overflow: "auto" }}
                         >
                           {shippingMethods
-                            .find((el) => el.id == params.shippingMethod)
+                            .find((el) => el.id === params.shippingMethod)
                             .delivery_intervals?.map((el, index) => {
                               return (
                                 <li
@@ -405,7 +407,7 @@ function Index() {
                   <input
                     placeholder="Code"
                     readOnly={!!(carts && carts.promo_code)}
-                    value={promoCode}
+                    value={promoCode || ""}
                     onChange={(e) => {
                       setPromoCode(e.target.value);
                     }}
@@ -483,7 +485,7 @@ function Index() {
                 payment_gateway_id: params.paymentMethod,
                 courier_id: params.shippingMethod,
                 delivery_intervals_id: shippingMethods.find(
-                  (el) => el.id == params.shippingMethod
+                  (el) => el.id === params.shippingMethod
                 )?.delivery_intervals?.length
                   ? params.deliveryIntervals
                   : -1,
