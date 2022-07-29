@@ -36,6 +36,10 @@
       "consent": "M continuing to check out, you are agreeing to our <0>Malay</0> and <1>Bahasa</1>.",
       "item": "{{count}} item-",
       "item_many": "{{count}} bb items"
+    },
+    "warranty_registration": {
+      "title": "SECURE YOUR HUNN DEVICE MS",
+      "subtitle": "Register your warranty with us. MS"
     }
   }
 }

@@ -35,6 +35,10 @@
       "consent": "By continuing to check out, you are agreeing to our <0>Terms of Use</0> and <1>Privacy Notice</1>.",
       "item": "{{count}} item",
       "item_many": "{{count}} items"
+    },
+    "warranty_registration": {
+      "title": "SECURE YOUR HUNN DEVICE",
+      "subtitle": "Register your warranty with us."
     }
   }
 }
