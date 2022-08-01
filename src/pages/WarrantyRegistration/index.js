@@ -60,8 +60,8 @@ function Index() {
 	return (
 		<Styled>
 			<Hero
-				title={t("page.warranty_registration.title")}
-				subtitle={t("page.warranty_registration.subtitle")}
+				title={t("page.warranty-registration.title")}
+				subtitle={t("page.warranty-registration.subtitle")}
 				bg="warranty"
 			/>
 			<div className="container">
