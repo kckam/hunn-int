@@ -24,7 +24,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: "en",
-    debug: true,
+    debug: process.env.NODE_ENV === "development",
     supportedLngs: ["en", "ms"],
     load: "currentOnly",
     detection: {

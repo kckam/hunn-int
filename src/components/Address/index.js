@@ -110,14 +110,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <input
                         placeholder="Enter first name"
                         value={input?.firstname || ""}
-                        onChange={(e) => {
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              firstname: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("firstname")}
                       />
                     </div>
                     <div className="error-msg">
@@ -132,14 +125,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <input
                         placeholder="Enter last name"
                         value={input?.lastname || ""}
-                        onChange={(e) => {
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              lastname: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("lastname")}
                       />
                     </div>
                     <div className="error-msg">
@@ -159,14 +145,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <input
                         placeholder="Enter mobile"
                         value={input?.mobile || ""}
-                        onChange={(e) => {
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              mobile: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("mobile")}
                       />
                     </div>
                     <div className="error-msg">
@@ -184,14 +163,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                         rows={4}
                         placeholder="Enter Address"
                         value={input?.address || ""}
-                        onChange={(e) => {
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              address: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("address")}
                       />
                     </div>
                     <div className="error-msg">
@@ -207,15 +179,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <label>{config.adl1_name}</label>
                       <select
                         value={input?.adl1 || ""}
-                        onChange={(e) => {
-                          e.persist();
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              adl1: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("adl1")}
                       >
                         <option value="">{config.adl1_name}</option>
                         {adls?.data &&
@@ -239,15 +203,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <label>{config.adl2_name}</label>
                       <select
                         value={input?.adl2 || ""}
-                        onChange={(e) => {
-                          e.persist();
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              adl2: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("adl2")}
                       >
                         <option value="">{config.adl2_name}</option>
 
@@ -274,15 +230,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       <label>Zipcode</label>
                       <select
                         value={input?.zipcode || ""}
-                        onChange={(e) => {
-                          e.persist();
-                          setInput((prevState) => {
-                            return {
-                              ...prevState,
-                              zipcode: e.target.value,
-                            };
-                          });
-                        }}
+                        onChange={inputHandler("zipcode")}
                       >
                         <option value="">zipcode</option>
 

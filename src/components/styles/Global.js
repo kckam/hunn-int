@@ -32,6 +32,7 @@ img {
 	max-width: 100%;
 	height: auto;
 	vertical-align: middle;
+  /* aspect-ratio: attr(width) / attr(height); */
 }
 
 .container {
