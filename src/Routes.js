@@ -172,6 +172,8 @@ function WebRoutes() {
             titleTemplate="Hunn International - %s"
             defaultTitle="Hunn International"
           >
+            <link rel="home" href="https://hunn-international.com" />
+            <link rel="canonical" href="https://hunn-international.com" />
             {config?.languages?.map((locale) => (
               <link
                 rel="alternate"

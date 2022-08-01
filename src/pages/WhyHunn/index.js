@@ -1,13 +1,38 @@
+import { useState, useEffect } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Hero from "../../components/Hero";
 import breakpoints from "../../config/breakpoint";
+import i18n from "i18next";
 
 const { lg } = breakpoints;
 
 function Index() {
   const { t } = useTranslation();
+  const [contents, setContents] = useState(null);
+
+  useEffect(() => {
+    populate();
+  }, []);
+
+  async function populate() {
+    let contents;
+
+    switch (i18n.language) {
+      case "en":
+        contents = await import("./lang/en");
+        break;
+      case "ms":
+        contents = await import("./lang/ms");
+        break;
+      default:
+        contents = await import("./lang/en");
+        break;
+    }
+
+    setContents(contents.default);
+  }
 
   return (
     <Styled>
@@ -21,95 +46,32 @@ function Index() {
       />
 
       <div className="container">
-        <div className="content">
-          <picture>
-            <source
-              media={`(${lg.down})`}
-              srcSet={`/images/why-hunn/img1-md.jpg`}
-              width="800"
-              height="320"
-            />
+        {!contents
+          ? "loading"
+          : contents.map((el, i) => (
+              <div className="content" key={`content-${i}`}>
+                <picture>
+                  <source
+                    media={`(${lg.down})`}
+                    srcSet={el.image.md}
+                    width="800"
+                    height="320"
+                  />
 
-            <img
-              src="/images/why-hunn/img1-lg.jpg"
-              alt="Simple"
-              width="360"
-              height="450"
-            />
-          </picture>
+                  <img
+                    loading="lazy"
+                    src={el.image.lg}
+                    alt={el.image.header}
+                    width="360"
+                    height="450"
+                  />
+                </picture>
 
-          <h2>SIMPLE</h2>
+                <h2>{el.header}</h2>
 
-          <p>
-            Hunn is developed as an easy alternative aiming to improve an
-            everyday ritual for tobacco users, without compromising their
-            enjoyment.
-            <br />
-            <br />
-            We seek to provide a seamless transition and improve the tobacco
-            experience - reducing unpleasant smells, smoke or ash through smart
-            technology.
-          </p>
-        </div>
-
-        <div className="content">
-          <picture>
-            <source
-              media={`(${lg.down})`}
-              srcSet={`/images/why-hunn/img2-md.jpg`}
-              width="800"
-              height="320"
-            />
-
-            <img
-              src="/images/why-hunn/img2-lg.jpg"
-              alt="Smart"
-              width="360"
-              height="450"
-            />
-          </picture>
-
-          <h2>SMART</h2>
-
-          <p>
-            Every heated moment with Hunn is enhanced through our innovative
-            heated tobacco technology.
-            <br />
-            <br />
-            Designed with a ceramic induction pin, every moment is heated evenly
-            to bring forward a well-rounded taste and maximum experience.
-          </p>
-        </div>
-
-        <div className="content">
-          <picture>
-            <source
-              media={`(${lg.down})`}
-              srcSet={`/images/why-hunn/img3-md.jpg`}
-              width="800"
-              height="320"
-            />
-
-            <img
-              src="/images/why-hunn/img3-lg.jpg"
-              alt="Experience"
-              width="360"
-              height="450"
-            />
-          </picture>
-
-          <h2>EXPERIENCE</h2>
-
-          <p>
-            Designed for convenience, the Hunn device tackles issues faced by
-            modern smokers.
-            <br />
-            <br />
-            It incorporates modern accessories, such as a fitted casing for an
-            extra layer of protection and is easy to use with the touch of a
-            single button.
-          </p>
-        </div>
+                <p>{el.body}</p>
+              </div>
+            ))}
       </div>
     </Styled>
   );

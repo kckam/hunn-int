@@ -98,7 +98,6 @@ function Index() {
                 <input
                   type="text"
                   placeholder="Enter an address to locate store"
-                  style={{}}
                 />
               </div>
             </StandaloneSearchBox>

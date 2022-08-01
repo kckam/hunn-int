@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import store from "@ysq-intl/react-redux-ysqstore";
 import { Provider } from "react-redux";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,3 +13,5 @@ root.render(
   </Provider>
   // </React.StrictMode>
 );
+
+// reportWebVitals(console.log);
