@@ -229,7 +229,7 @@ function Index() {
                     : navigate("/login");
                 }}
               >
-                ADD TO CART
+                {t("page.product.add-to-cart")}
               </Button>
               {addToCart.status.loading && <LoadingBtn />}
             </div>
@@ -238,7 +238,7 @@ function Index() {
               <div className="product__review-header">
                 <div className="product__review-overall">
                   <h2 className="product__review-count">
-                    REVIEWS ({product.product_reviews.length})
+                  {t("page.product.reviews")} ({product.product_reviews.length})
                   </h2>
                   {!product.product_reviewed && (
                     <div
@@ -247,7 +247,7 @@ function Index() {
                         setShowModal(true);
                       }}
                     >
-                      Write a review
+                      {t("page.product.write-a-review")}
                     </div>
                   )}
                 </div>
@@ -274,7 +274,7 @@ function Index() {
                           product.product_reviews.length) *
                           10
                       ) / 10}{" "}
-                      Stars
+                      {t("page.product.stars")}
                     </div>
                   </div>
                 )}
@@ -331,7 +331,7 @@ function Index() {
                       }
                     }}
                   >
-                    Prev Page
+                    {t("page.product.prev-page")}
                   </li>
                   <li
                     className={`${
@@ -350,7 +350,7 @@ function Index() {
                       }
                     }}
                   >
-                    Next Page
+                    {t("page.product.next-page")}
                   </li>
                 </ul>
               )}
@@ -366,7 +366,7 @@ function Index() {
                 e.stopPropagation();
               }}
             >
-              <h2 className="modal__header">WRITE YOUR REVIEW</h2>
+              <h2 className="modal__header">{t("page.product.write-your-review")}</h2>
 
               <div className="product__review-rating">
                 <RatingStars
@@ -388,7 +388,7 @@ function Index() {
                 <div className="form-row">
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>Headline</label>
+                      <label>{t("page.product.headline")}</label>
                       <input
                         placeholder="Enter headline"
                         value={reviewInput.title}
@@ -408,7 +408,7 @@ function Index() {
                 <div className="form-row">
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>Comment</label>
+                      <label>{t("page.product.comment")}</label>
                       <textarea
                         placeholder="Enter comment"
                         value={reviewInput.description}
@@ -428,7 +428,7 @@ function Index() {
                 </div>
                 <div className="form__submit">
                   <div className="p-relative">
-                    <Button>SUBMIT</Button>
+                    <Button>{t("page.product.submit")}</Button>
                     {createProductReview.status.loading && <LoadingBtn />}
                   </div>
 
@@ -439,7 +439,7 @@ function Index() {
                       setShowModal(false);
                     }}
                   >
-                    CANCEL
+                    {t("page.product.cancel")}
                   </Button>
                 </div>
               </Form>

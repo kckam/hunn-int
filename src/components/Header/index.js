@@ -34,24 +34,24 @@ export default function Index() {
 
   const NAVS = [
     {
-      label: t("navs.shop"),
+      label: t("header.shop"),
       link: "/shop",
     },
     {
-      label: t("navs.warranty-registration"),
+      label: t("header.warranty-registration"),
       link: "/warranty-registration",
     },
     auth === true
       ? {
-          label: t("navs.my-account"),
+          label: t("header.my-account"),
           link: "/account/profile",
         }
       : {
-          label: "Login",
+          label: t("header.login"),
           link: "/login",
         },
     {
-      label: t("navs.contact-us"),
+      label: t("header.contact-us"),
       link: "/#contact-us",
     },
   ];
@@ -121,7 +121,7 @@ export default function Index() {
                   setShowLanguage((prev) => !prev);
                 }}
               >
-                <div>{t("navs.language")}</div>
+                <div>{t("header.language")}</div>
                 <div
                   className={`dropdown-icon ${showLanguage ? "active" : ""}`}
                 ></div>
@@ -222,7 +222,7 @@ export default function Index() {
                       setShowLanguage((prev) => !prev);
                     }}
                   >
-                    <div>{t("navs.language")}</div>
+                    <div>{t("header.language")}</div>
                     <div
                       className={`dropdown-icon ${
                         showLanguage ? "active" : ""

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Styled } from "./style";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "@ysq-intl/react-redux-ysqstore";
@@ -29,7 +29,11 @@ function Home() {
 
   return (
     <Styled>
-      <Hero title={"WELCOME"} subtitle={"Sign in to say hello."} bg="auth" />
+      <Hero 
+        title={t("page.login.title")}
+        subtitle={t("page.login.subtitle")}
+        bg="auth" 
+      />
       <div className="login-form__wrapper container">
         <form
           onSubmit={(e) => {
@@ -39,7 +43,7 @@ function Home() {
         >
           <div className="form__field">
             <input
-              placeholder="Enter email"
+              placeholder={t("page.login.enter-email")}
               value={input.email}
               onChange={(e) => {
                 setInput((prev) => ({ ...prev, email: e.target.value }));
@@ -50,7 +54,7 @@ function Home() {
           </div>
           <div className="form__field">
             <input
-              placeholder="Enter password"
+              placeholder={t("page.login.enter-password")}
               value={input.password}
               onChange={(e) => {
                 setInput((prev) => ({ ...prev, password: e.target.value }));
@@ -62,17 +66,19 @@ function Home() {
           </div>
 
           <div className="p-relative btn-wrapper">
-            <Button className="login-button">LOGIN</Button>
+            <Button className="login-button">{t("page.login.login")}</Button>
             {login.status.loading && <LoadingBtn />}
           </div>
 
           <Link to="/forget-password" className="forget-password">
-            Forget password?
+            {t("page.login.forget-password")}
           </Link>
         </form>
 
         <div className="register">
-          Don’t have an account? <Link to="/register">Create Account</Link>
+          <Trans i18nKey="page.login.register">
+            <Link to="/register">Create Account</Link>
+          </Trans>
         </div>
       </div>
     </Styled>

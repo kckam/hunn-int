@@ -12,53 +12,53 @@ export default function Index() {
 
   const NAVS = [
     {
-      label: t("navs.hunn"),
+      label: t("footer.hunn"),
       link: "",
       child: [
         {
-          label: t("navs.why-hunn"),
+          label: t("footer.why-hunn"),
           link: "/why-hunn",
         },
         {
-          label: "Let's Get Started",
+          label: t("footer.lets-get-started"),
           link: "/lets-get-started",
         },
         {
-          label: "Store Locator",
+          label: t("footer.store-locator"),
           link: "/store-locator",
         },
       ],
     },
     {
-      label: t("navs.faqs"),
+      label: t("footer.faqs"),
       link: "",
       child: [
-        { label: t("navs.general-enquiries"), link: "/faq#general-enquiries" },
+        { label: t("footer.general-enquiries"), link: "/faq#general-enquiries" },
         {
-          label: t("navs.about-our-hunn-devices"),
+          label: t("footer.about-our-hunn-devices"),
           link: "/faq#about-our-hunn-devices",
         },
-        { label: t("navs.product-care"), link: "/faq#product-care" },
-        { label: t("navs.payment"), link: "/faq#payment" },
+        { label: t("footer.product-care"), link: "/faq#product-care" },
+        { label: t("footer.payment"), link: "/faq#payment" },
         {
-          label: t("navs.shipping-and-delivery"),
+          label: t("footer.shipping-and-delivery"),
           link: "/faq#shipping-and-delivery",
         },
         {
-          label: t("navs.returns-and-refunds-policy"),
+          label: t("footer.returns-and-refunds-policy"),
           link: "/faq#returns-and-refunds-policy",
         },
-        { label: t("navs.warranty"), link: "/faq#warranty" },
-        { label: t("navs.my-account"), link: "/faq#my-account" },
+        { label: t("footer.warranty"), link: "/faq#warranty" },
+        { label: t("footer.my-account"), link: "/faq#my-account" },
       ],
     },
     {
-      label: t("navs.terms-of-use-and-policy"),
+      label: t("footer.terms-of-use-and-policy"),
       link: "",
       child: [
-        { label: t("navs.privacy-notice-and-cookie"), link: "/privacy-notice" },
-        { label: t("navs.warranty-policy"), link: "/warranty-policy" },
-        { label: t("navs.terms-of-use"), link: "/terms-of-use" },
+        { label: t("footer.privacy-notice-and-cookie"), link: "/privacy-notice" },
+        { label: t("footer.warranty-policy"), link: "/warranty-policy" },
+        { label: t("footer.terms-of-use"), link: "/terms-of-use" },
       ],
     },
   ];

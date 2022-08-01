@@ -3,18 +3,22 @@
     "warning": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
   },
 
-  "navs": {
+  "header": {
     "shop": "Shop",
     "warranty-registration": "Warranty Registration",
+    "login": "Login",
     "my-account": "My Account",
     "contact-us": "Contact Us",
-    "language": "Language",
+    "language": "Language"
+  },
 
+  "footer": {
     "hunn": "HUNN",
-    "faqs": "FAQS",
-    "terms-of-use-and-policy": "TERMS OF USE & POLICY",
-
     "why-hunn": "Why Hunn?",
+    "lets-get-started": "Let's Get Started",
+    "store-locator": "Store Locator",
+
+    "faqs": "FAQS",
     "general-enquiries": "General Enquiries",
     "about-our-hunn-devices": "About Our Hunn Devices",
     "product-care": "Product Care",
@@ -22,6 +26,9 @@
     "shipping-and-delivery": "Shipping and Delivery",
     "returns-and-refunds-policy": "Returns and Refunds Policy",
     "warranty": "Warranty",
+    "my-account": "My Account",
+
+    "terms-of-use-and-policy": "TERMS OF USE & POLICY",
     "privacy-notice-and-cookie": "Privacy Notice & Cookies",
     "warranty-policy": "Warranty Policy",
     "terms-of-use": "Terms of Use"
@@ -35,7 +42,10 @@
     "age-verification": {
       "title": "You must be 18 and over to access the Hunn website, which contains information for adult tobacco users within Malaysia.",
       "question": "ENTER YOUR DATE OF BIRTH",
-      "error": "You have to be of legal age to enter this site."
+      "error": "You have to be of legal age to enter this site.",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year"
     },
     "cart": {
       "consent": "By continuing to check out, you are agreeing to our <0>Terms of Use</0> and <1>Privacy Notice</1>.",
@@ -83,16 +93,30 @@
       "subtitle": ""
     },
     "login": {
-      "title": "",
-      "subtitle": ""
+      "title": "WELCOME",
+      "subtitle": "Sign in to say hello.",
+      "enter-email": "Enter email",
+      "enter-password": "Enter password",
+      "login": "LOGIN",
+      "forget-password": "Forget password?",
+      "register": "Don't have an account? <0>Create Account</0>."
     },
     "privacy-notice": {
       "title": "",
       "subtitle": ""
     },
     "product": {
-      "title": "",
-      "subtitle": ""
+      "add-to-cart": "ADD TO CART",
+      "reviews": "REVIEWS",
+      "write-a-review": "Write a review",
+      "stars": "Stars",
+      "prev-page": "Prev Page",
+      "next-page": "Next Page",
+      "write-your-review": "WRITE YOUR REVIEW",
+      "headline": "Headline",
+      "comment": "Comment",
+      "submit": "SUBMIT",
+      "cancel": "CANCEL"
     },
     "register": {
       "title": "",

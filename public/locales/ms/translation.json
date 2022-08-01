@@ -3,18 +3,22 @@
     "warning": "Amaran:  Produk ini mengandungi nikotin. Nikotin ialah bahan kimia yang menagihkan."
   },
 
-  "navs": {
+  "header": {
     "shop": "Kedai",
     "warranty-registration": "Pendaftaran Waranti",
     "my-account": "Akaun",
-    "contact-us": "Contact Us",
-    "language": "Bahasa",
+    "login": "<MS not ready>",
+    "contact-us": "<MS not ready>",
+    "language": "Bahasa"
+  },
 
+  "footer": {
     "hunn": "HUNN",
-    "faqs": "SOALAN LAZIM",
-    "terms-of-use-and-policy": "<MS not ready>",
-
     "why-hunn": "<MS not ready>",
+    "lets-get-started": "<MS not ready>",
+    "store-locator": "<MS not ready>",
+
+    "faqs": "SOALAN LAZIM",
     "general-enquiries": "<MS not ready>",
     "about-our-hunn-devices": "<MS not ready>",
     "product-care": "<MS not ready>",
@@ -22,6 +26,9 @@
     "shipping-and-delivery": "<MS not ready>",
     "returns-and-refunds-policy": "<MS not ready>",
     "warranty": "<MS not ready>",
+    "my-account": "Akaun",
+
+    "terms-of-use-and-policy": "<MS not ready>",
     "privacy-notice-and-cookie": "<MS not ready>",
     "warranty-policy": "Dasar Waranti",
     "terms-of-use": "Terma Penggunaan"
@@ -35,7 +42,10 @@
     "age-verification": {
       "title": "<MS not ready>You must be 18 and over to access the Hunn website, which contains information for adult tobacco users within Malaysia.",
       "question": "<MS not ready>ENTER YOUR DATE OF BIRTH",
-      "error": "<MS not ready>You have to be of legal age to enter this site."
+      "error": "<MS not ready>You have to be of legal age to enter this site.",
+      "day": "<MS not ready>Day",
+      "month": "<MS not ready>Month",
+      "year": "<MS not ready>Year"
     },
     "cart": {
       "consent": "<MS not ready>By continuing to check out, you are agreeing to our <0>Terms of Use</0> and <1>Privacy Notice</1>.",
@@ -83,16 +93,29 @@
       "subtitle": ""
     },
     "login": {
-      "title": "",
-      "subtitle": ""
+      "title": "<MS not ready>",
+      "subtitle": "<MS not ready>",
+      "enter-email": "<MS not ready>",
+      "enter-password": "<MS not ready>",
+      "login": "<MS not ready>",
+      "forget-password": "<MS not ready>",
+      "register": "<MS not ready> <0>MS not ready</0>."
     },
     "privacy-notice": {
       "title": "",
       "subtitle": ""
     },
     "product": {
-      "title": "",
-      "subtitle": ""
+      "add-to-cart": "<MS not ready>",
+      "reviews": "<MS not ready>",
+      "stars": "<MS not ready>",
+      "prev-page": "<MS not ready>",
+      "next-page": "<MS not ready>",
+      "write-your-review": "<MS not ready>",
+      "headline": "<MS not ready>",
+      "comment": "<MS not ready>",
+      "submit": "<MS not ready>",
+      "cancel": "<MS not ready>"
     },
     "register": {
       "title": "",
