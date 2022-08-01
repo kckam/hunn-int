@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Styled } from "./style";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "@ysq-intl/react-redux-ysqstore";
