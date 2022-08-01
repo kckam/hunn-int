@@ -102,7 +102,7 @@ function Index() {
               </div>
               <div className="dob-section__input-group">
                 <div className="dob-section__input-wrapper">
-                  <label className="dob-section__input-label">DAY</label>
+                  <label className="dob-section__input-label">{t("page.age-verification.day")}</label>
                   <div className="dob-section__input">
                     <input
                       type="text"
@@ -129,7 +129,7 @@ function Index() {
                 </div>
 
                 <div className="dob-section__input-wrapper">
-                  <label className="dob-section__input-label">MONTH</label>
+                  <label className="dob-section__input-label">{t("page.age-verification.month")}</label>
                   <div className="dob-section__input">
                     <input
                       type="text"
@@ -153,7 +153,7 @@ function Index() {
                 </div>
 
                 <div className="dob-section__input-wrapper">
-                  <label className="dob-section__input-label">YEAR</label>
+                  <label className="dob-section__input-label">{t("page.age-verification.year")}</label>
                   <div className="dob-section__input">
                     <input
                       type="text"
