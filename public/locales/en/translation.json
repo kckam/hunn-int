@@ -26,19 +26,126 @@
     "warranty-policy": "Warranty Policy",
     "terms-of-use": "Terms of Use"
   },
+
   "page": {
-    "shop": {
-      "title": "BEGIN YOUR JOURNEY",
-      "subtitle": "Let’s get shopping with Hunn."
+    "account": {
+      "title": "",
+      "subtitle": ""
+    },
+    "age-verification": {
+      "title": "You must be 18 and over to access the Hunn website, which contains information for adult tobacco users within Malaysia.",
+      "question": "ENTER YOUR DATE OF BIRTH",
+      "error": "You have to be of legal age to enter this site."
     },
     "cart": {
       "consent": "By continuing to check out, you are agreeing to our <0>Terms of Use</0> and <1>Privacy Notice</1>.",
       "item": "{{count}} item",
-      "item_many": "{{count}} items"
+      "item_many": "{{count}} items",
+      "nothing-here-yet": "Nothing here yet",
+      "keep-browsing": "Would you like to keep browsing?",
+      "view-products": "View Products",
+      "order-summary": "Order Summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "calculated-at-check-out": "calculated at check out",
+      "tax": "Tax",
+      "included": "included",
+      "total": "Total",
+      "agreement": "By continuing to check out, you are agreeing to our Terms of Use and Privacy Notice."
     },
-    "warranty_registration": {
+    "checkout": {
+      "title": "",
+      "subtitle": "",
+      "account": "Account",
+      "shipping-address": "Shipping Address",
+      "billing-address": "Billing Address",
+      "bill-to-the-same-address": "Bill to the same address",
+      "shipping-method": "Shipping Method",
+      "discount-code": "Discount Code",
+      "promo-code": "Promo Code",
+      "total": "Total",
+      "confirm": "Confirm"
+    },
+    "faq": {
+      "title": "",
+      "subtitle": ""
+    },
+    "forget-password": {
+      "title": "",
+      "subtitle": ""
+    },
+    "home": {
+      "title": "",
+      "subtitle": ""
+    },
+    "lets-get-started": {
+      "title": "",
+      "subtitle": ""
+    },
+    "login": {
+      "title": "",
+      "subtitle": ""
+    },
+    "privacy-notice": {
+      "title": "",
+      "subtitle": ""
+    },
+    "product": {
+      "title": "",
+      "subtitle": ""
+    },
+    "register": {
+      "title": "",
+      "subtitle": ""
+    },
+    "shop": {
+      "title": "BEGIN YOUR JOURNEY",
+      "subtitle": "Let's get shopping with Hunn."
+    },
+    "store-locator": {
+      "title": "",
+      "subtitle": ""
+    },
+    "template": {
+      "title": "",
+      "subtitle": ""
+    },
+    "terms-of-use": {
+      "title": "",
+      "subtitle": ""
+    },
+    "tracking": {
+      "title": "",
+      "subtitle": ""
+    },
+    "warranty-policy": {
+      "title": "",
+      "subtitle": ""
+    },
+    "warranty-registration": {
       "title": "SECURE YOUR HUNN DEVICE",
-      "subtitle": "Register your warranty with us."
+      "subtitle": "Register your warranty with us.",
+      "thankYouTitle": "Thank you for registering your Hunn warranty.",
+      "thankYouSubtitle": "A confirmation email will be sent to you within 2-3 working days. If you need further help, please contact us.",
+      "enterEmail": "Enter Email",
+      "enterPassword": "Enter Password",
+      "emailAddress": "Email Address",
+      "name": "Name",
+      "mobile": "Mobile",
+      "dob": "Date of Birth",
+      "deviceSerialNumber": "Device Serial Number",
+      "state": "State",
+      "city": "City",
+      "receipt": "Receipt",
+      "saveChanges": "Save Changes",
+      "submit": "Submit",
+      "mandatoryField": "Mandatory Fields",
+      "addMoreDevice": "Add more device",
+      "backToHome": "Back to Home"
+    },
+    "why-hunn": {
+      "title": "",
+      "subtitle": ""
     }
   }
 }

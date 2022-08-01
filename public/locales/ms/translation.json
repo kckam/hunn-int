@@ -1,45 +1,152 @@
 {
   "general": {
-    "warning": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
+    "warning": "Amaran:  Produk ini mengandungi nikotin. Nikotin ialah bahan kimia yang menagihkan."
   },
 
   "navs": {
-    "shop": "Pandai",
-    "warranty-registration": "Warranty Registration",
-    "my-account": "My Account",
+    "shop": "Kedai",
+    "warranty-registration": "Pendaftaran Waranti",
+    "my-account": "Akaun",
     "contact-us": "Contact Us",
-    "language": "Language",
+    "language": "Bahasa",
 
     "hunn": "HUNN",
-    "faqs": "FAQS",
-    "terms-of-use-and-policy": "TERMS OF USE & POLICY",
+    "faqs": "SOALAN LAZIM",
+    "terms-of-use-and-policy": "<MS not ready>",
 
-    "why-hunn": "Why Hunn?",
-    "general-enquiries": "General Enquiries",
-    "about-our-hunn-devices": "About Our Hunn Devices",
-    "product-care": "Product Care",
-    "payment": "Payment",
-    "shipping-and-delivery": "Shipping and Delivery",
-    "returns-and-refunds-policy": "Returns and Refunds Policy",
-    "warranty": "Warranty",
-    "privacy-notice-and-cookie": "Privacy Notice & Cookies",
-    "warranty-policy": "Warranty Policy",
-    "terms-of-use": "Terms of Use"
+    "why-hunn": "<MS not ready>",
+    "general-enquiries": "<MS not ready>",
+    "about-our-hunn-devices": "<MS not ready>",
+    "product-care": "<MS not ready>",
+    "payment": "<MS not ready>",
+    "shipping-and-delivery": "<MS not ready>",
+    "returns-and-refunds-policy": "<MS not ready>",
+    "warranty": "<MS not ready>",
+    "privacy-notice-and-cookie": "<MS not ready>",
+    "warranty-policy": "Dasar Waranti",
+    "terms-of-use": "Terma Penggunaan"
   },
 
   "page": {
-    "shop": {
-      "title": "BEGIN YOUR JOURNEY",
-      "subtitle": "Let’s get shopping with Hunn."
+    "account": {
+      "title": "",
+      "subtitle": ""
+    },
+    "age-verification": {
+      "title": "<MS not ready>You must be 18 and over to access the Hunn website, which contains information for adult tobacco users within Malaysia.",
+      "question": "<MS not ready>ENTER YOUR DATE OF BIRTH",
+      "error": "<MS not ready>You have to be of legal age to enter this site."
     },
     "cart": {
-      "consent": "M continuing to check out, you are agreeing to our <0>Malay</0> and <1>Bahasa</1>.",
-      "item": "{{count}} item-",
-      "item_many": "{{count}} bb items"
+      "consent": "<MS not ready>By continuing to check out, you are agreeing to our <0>Terms of Use</0> and <1>Privacy Notice</1>.",
+      "item": "{{count}} item",
+      "item_many": "{{count}} items",
+      "nothing-here-yet": "Masih kosong lagi",
+      "keep-browsing": "Adakah anda ingin terus menyemak imbas?",
+      "view-products": "<MS not ready>",
+      "order-summary": "Ringkasan Pesanan",
+      "subtotal": "Jumlah kecil",
+      "shipping": "Penghantaran",
+      "calculated-at-check-out": "dikira semasa daftar keluar",
+      "tax": "Cukai",
+      "included": "termasuk",
+      "total": "Jumlah",
+      "agreement": "Dengan meneruskan daftar keluar, anda bersetuju dengan Terma Penggunaan dan Notis Privasi kami."
     },
-    "warranty_registration": {
-      "title": "SECURE YOUR HUNN DEVICE MS",
-      "subtitle": "Register your warranty with us. MS"
+    "checkout": {
+      "title": "",
+      "subtitle": "",
+      "account": "Akaun",
+      "shipping-address": "Alamat Penghantaran",
+      "billing-address": "Alamat Pengebilan",
+      "bill-to-the-same-address": "<MS not ready>",
+      "shipping-method": "Kaedah Penghantaran",
+      "discount-code": "<MS not ready>",
+      "promo-code": "<MS not ready>",
+      "total": "<MS not ready>",
+      "confirm": "<MS not ready>"
+    },
+    "faq": {
+      "title": "",
+      "subtitle": ""
+    },
+    "forget-password": {
+      "title": "",
+      "subtitle": ""
+    },
+    "home": {
+      "title": "",
+      "subtitle": ""
+    },
+    "lets-get-started": {
+      "title": "",
+      "subtitle": ""
+    },
+    "login": {
+      "title": "",
+      "subtitle": ""
+    },
+    "privacy-notice": {
+      "title": "",
+      "subtitle": ""
+    },
+    "product": {
+      "title": "",
+      "subtitle": ""
+    },
+    "register": {
+      "title": "",
+      "subtitle": ""
+    },
+    "shop": {
+      "title": "<MS not ready>BEGIN YOUR JOURNEY",
+      "subtitle": "<MS not ready>Let's get shopping with Hunn."
+    },
+    "store-locator": {
+      "title": "",
+      "subtitle": ""
+    },
+    "template": {
+      "title": "",
+      "subtitle": ""
+    },
+    "terms-of-use": {
+      "title": "",
+      "subtitle": ""
+    },
+    "tracking": {
+      "title": "",
+      "subtitle": ""
+    },
+    "warranty-policy": {
+      "title": "",
+      "subtitle": ""
+    },
+    "warranty-registration": {
+      "title": "<MS not ready>SECURE YOUR HUNN DEVICE",
+      "subtitle": "<MS not ready>Register your warranty with us.",
+      "thankYouTitle": "<MS not ready>Thank you for registering your Hunn warranty.",
+      "thankYouSubtitle": "<MS not ready>A confirmation email will be sent to you within 2-3 working days. If you need further help, please contact us.",
+      "enterEmail": "",
+      "enterPassword": "",
+      "emailAddress": "Alamat e-mel",
+      "name": "Nama",
+      "mobile": "Telefon Bimbit",
+      "dob": "Tarikh Lahir",
+      "deviceSerialNumber": "Nombor Siri Peranti",
+      "state": "Negeri",
+      "city": "Bandar",
+      "receipt": "Resit",
+      "saveChanges": "Simpan Perubahan",
+      "submit": "Hantar",
+      "mandatoryField": "<MS not ready>Mandatory Fields",
+      "addMoreDevice": "<MS not ready>Add more device",
+      "backToHome": "<MS not ready>Back to Home"
+    },
+
+    "why-hunn": {
+      "title": "",
+      "subtitle": ""
     }
   }
 }

@@ -93,13 +93,12 @@ function Index() {
             </div>
 
             <p className="content__disclaimer">
-              You must be 18 and over to access the Hunn website, which contains
-              information for adult tobacco users within Malaysia.
+              {t("page.age-verification.title")}
             </p>
 
             <div className="content__dob-section">
               <div className="dob-section__header">
-                ENTER YOUR DATE OF BIRTH
+              {t("page.age-verification.question")}
               </div>
               <div className="dob-section__input-group">
                 <div className="dob-section__input-wrapper">
@@ -199,7 +198,7 @@ function Index() {
 
             {error && (
               <div className="error-msg">
-                You have to be of legal age to enter this site.
+                {t("page.age-verification.error")}
               </div>
             )}
           </div>
