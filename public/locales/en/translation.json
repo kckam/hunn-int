@@ -3,6 +3,53 @@
     "warning": "WARNING: This product contains nicotine. Nicotine is an addictive chemical."
   },
 
+  "button": {
+    "buy-now": "BUY NOW",
+    "add": "ADD",
+    "learn-more": "LEARN MORE",
+    "update": "UPDATE",
+    "cancel": "CANCEL",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add-address": "ADD ADDRESS",
+    "add-new-address": "ADD NEW ADDRESS"
+  },
+
+  "form": {
+    "label": {
+      "firstname": "First Name",
+      "lastname": "Last Name",
+      "mobile": "Mobile",
+      "gender": "Gender",
+      "male": "Male",
+      "female": "Female",
+      "dob": "Date of Birth",
+      "day": "Day",
+      "month": "Month",
+      "year": "Year",
+      "zipcode": "Zipcode",
+      "address": "Address",
+      "current-password": "Current Password",
+      "new-password": "New Password",
+      "retype-password": "Retype Password",
+      "new-email": "New Email",
+      "retype-new-email": "Retype New Email"
+    },
+    "placeholder": {
+      "firstname": "Enter First Name",
+      "lastname": "Enter Last Name",
+      "mobile": "Enter Mobile",
+      "gender": "Choose Gender",
+      "zipcode": "Choose Zipcode",
+      "address": "Enter Address",
+      "current-password": "Enter Current Password",
+      "new-password": "Enter New Password",
+      "retype-password": "Retype Password",
+      "new-email": "Enter New Email",
+      "retype-new-email": "Retype New Email"
+    }
+  },
+
   "header": {
     "shop": "Shop",
     "warranty-registration": "Warranty Registration",
@@ -36,8 +83,31 @@
 
   "page": {
     "account": {
-      "title": "",
-      "subtitle": ""
+      "title": "MY ACCOUNT",
+      "subtitle": "",
+      "section": {
+        "profile": {
+          "label": "PROFILE",
+          "title": "Manage your contact information details."
+        },
+        "address": {
+          "label": "ADDRESS",
+          "nothing-here-yet": "Nothing here yet",
+          "would-you-like-to-add-an-address": "Would you like to add an address?"
+        },
+        "email": {
+          "label": "EMAIL"
+        },
+        "password": {
+          "label": "PASSWORD"
+        },
+        "order": {
+          "label": "ORDER"
+        },
+        "logout": {
+          "label": "LOGOUT"
+        }
+      }
     },
     "age-verification": {
       "title": "You must be 18 and over to access the Hunn website, which contains information for adult tobacco users within Malaysia.",
@@ -86,7 +156,89 @@
     },
     "home": {
       "title": "",
-      "subtitle": ""
+      "subtitle": "",
+      "section": {
+        "enhancement": {
+          "title": "ENCHANCING YOUR DAILY RITUAL",
+          "desc": "With an easy-to-clean, compact design, Model M provides stylish control of your experience with the touch of a single button.",
+          "items": [
+            {
+              "icon": "/images/home/smarter-choice.svg",
+              "label": "SMARTER CHOICE",
+              "desc": "Hunn Model M promises accessible technology, catering to those who wish to retain their lifestyle with greater convenience."
+            },
+            {
+              "icon": "/images/home/easy-alternative.svg",
+              "label": "EASY ALTERNATIVE",
+              "desc": "We seek to provide a seamless transition into an alternative tobacco experience, improving it by reducing unpleasant smells and use of flame."
+            },
+            {
+              "icon": "/images/home/heated-tobacco-technology.svg",
+              "label": "HEATED TOBACCO TECHNOLOGY",
+              "desc": "Designed with an induction pin which heats our exclusive tobacco sticks evenly, we bring forward a well-rounded taste of tobacco delivered to its maximum potential. ​"
+            }
+          ]
+        },
+        "specs": {
+          "desc": "Designed for comfort and safety, the Hunn Model M is equipped with a protective casing to provide an additional layer against heat or scratches. Our induction pin ensures your every moment is evenly-heated, delivering maximum flavour in every puff.",
+          "items": [
+            {
+              "icon": "/images/home/ic_charge.svg",
+              "label": "FAST CHARGING"
+            },
+            {
+              "icon": "/images/home/ic_clean.svg",
+              "label": "EASY CLEANING"
+            },
+            {
+              "icon": "/images/home/ic_heats.svg",
+              "label": "HEATS EVENLY"
+            },
+            {
+              "icon": "/images/home/ic_time.svg",
+              "label": "READY IN 20 SECONDS"
+            }
+          ]
+        },
+        "deal": {
+          "badge": "SPECIAL DEAL",
+          "title": "LIMITED TIME PURCHASE",
+          "desc": "As part of our launch, our Hunn Model M Starter Pack, consisiting of one device and two exclusive, complimentary gifts (worth RM 108), is available at the discounted price of <0>RM 59.90</0>"
+        },
+        "get-started": {
+          "title": "LET'S GET STARTED",
+          "items": ["Discover Your Hunn", "Keep it Clean", "Plug & Go"]
+        },
+        "contact-us": {
+          "title": "HERE TO HELP",
+          "desc": "Our Hunn Customer Care team will be happy to assist with any questions.",
+          "items": [
+            {
+              "action": {
+                "type": "call",
+                "param": "1800884866"
+              },
+              "icon": "/images/home/call.svg",
+              "label": "Hunn Hotline",
+              "desc": [
+                "1800-88-4866",
+                "9AM to 1PM, 2PM to 6PM(UTC +8)",
+                "Monday to Friday",
+                "Closed Saturday, Sunday and Public Holidays"
+              ]
+            },
+            {
+              "action": {
+                "type": "email",
+                "param": "cs@my.hunn-international.com"
+              },
+              "icon": "/images/home/email.svg",
+              "label": "Write to Us",
+              "desc": ["Via email", "cs@my.hunn-international.com"]
+            }
+          ]
+        }
+      }
     },
     "lets-get-started": {
       "title": "",

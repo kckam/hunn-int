@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Styled } from "./style";
 import { useTranslation } from "react-i18next";
 import { useAuth, useProfile } from "@ysq-intl/react-redux-ysqstore";
@@ -21,14 +21,6 @@ import Email from "./Email";
 import Password from "./Password";
 import Order from "./Order";
 
-const NAVS = [
-  { label: "PROFILE", link: "/account/profile" },
-  { label: "ADDRESS", link: "/account/address" },
-  { label: "EMAIL", link: "/account/email" },
-  { label: "PASSWORD", link: "/account/password" },
-  { label: "ORDER", link: "/account/order" },
-];
-
 function Account() {
   const { t } = useTranslation();
   const params = useParams();
@@ -39,6 +31,26 @@ function Account() {
   const [ref, { height: navsHeight }] = useMeasure({
     polyfill: ResizeObserver,
   });
+
+  const NAVS = useMemo(
+    () => [
+      {
+        label: t("page.account.section.profile.label"),
+        link: "/account/profile",
+      },
+      {
+        label: t("page.account.section.address.label"),
+        link: "/account/address",
+      },
+      { label: t("page.account.section.email.label"), link: "/account/email" },
+      {
+        label: t("page.account.section.password.label"),
+        link: "/account/password",
+      },
+      { label: t("page.account.section.order.label"), link: "/account/order" },
+    ],
+    []
+  );
 
   const transitions = useTransition(location.pathname, {
     from: { opacity: 0 },
@@ -61,10 +73,10 @@ function Account() {
   return (
     <Styled>
       <Helmet>
-        <title>My account</title>
-        <meta name="description" content="My account" />
+        <title>{t("page.account.title")}</title>
+        <meta name="description" content={t("page.account.title")} />
       </Helmet>
-      <Hero title={"MY ACCOUNT"} bg="account" />
+      <Hero title={t("page.account.title")} bg="account" />
       <div className={`inner-container ${showAccountNav ? "active" : ""}`}>
         {!showAccountNav && (
           <div
@@ -110,7 +122,7 @@ function Account() {
                 logout.action();
               }}
             >
-              LOGOUT
+              {t("page.account.section.logout.label")}
             </li>
           </ul>
           <div className="chevron"></div>

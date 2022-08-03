@@ -39,9 +39,9 @@ function Index() {
           <div className="form-row">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>Current Password</label>
+                <label>{t("form.label.current-password")}</label>
                 <input
-                  placeholder="Enter current password"
+                  placeholder={t("form.placeholder.current-password")}
                   type="password"
                   value={input.password}
                   onChange={(e) => {
@@ -60,9 +60,9 @@ function Index() {
           <div className="form-row">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>New email</label>
+                <label>{t("form.label.new-email")}</label>
                 <input
-                  placeholder="Enter new email"
+                  placeholder={t("form.placeholder.new-email")}
                   value={input.new_email}
                   onChange={(e) => {
                     setInput((prevState) => {
@@ -80,9 +80,9 @@ function Index() {
           <div className="form-row">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>Retype new email</label>
+                <label>{t("form.label.retype-new-email")}</label>
                 <input
-                  placeholder="Retype new email"
+                  placeholder={t("form.placeholder.retype-new-email")}
                   value={input.new_email_confirmation}
                   onChange={(e) => {
                     setInput((prevState) => {

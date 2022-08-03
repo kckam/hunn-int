@@ -69,8 +69,10 @@ function Home() {
           <h2 className="cart__title">MY CART</h2>
           {!carts ? (
             <div className="no-result" style={{ marginTop: "4rem" }}>
-              <h2 className="no-result-header">Nothing here yet</h2>
-              <p>Would you like to return to browsing?</p>
+              <h2 className="no-result-header">
+                {t("page.cart.nothing-here-yet")}
+              </h2>
+              <p>{t("page.cart.keep-browsing")}</p>
 
               <div style={{ margin: "30px 0" }}>
                 <Button
@@ -79,7 +81,7 @@ function Home() {
                     navigate("/shop");
                   }}
                 >
-                  View Products
+                  {t("page.cart.view-products")}
                 </Button>
               </div>
             </div>

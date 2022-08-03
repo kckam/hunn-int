@@ -46,7 +46,7 @@ function Index() {
     <Styled>
       <div className="profile-container account-container">
         <h2 className="profile__title">
-          Manage your contact information details.
+          {t("page.account.section.profile.title")}
         </h2>
 
         <Form
@@ -66,9 +66,9 @@ function Index() {
           <div className="form-row">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>First name</label>
+                <label>{t("form.label.firstname")}</label>
                 <input
-                  placeholder="Enter first name"
+                  placeholder={t("form.placeholder.firstname")}
                   value={input.firstname}
                   onChange={inputHandler("firstname")}
                 />
@@ -80,9 +80,9 @@ function Index() {
 
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>Last name</label>
+                <label>{t("form.label.lastname")}</label>
                 <input
-                  placeholder="Enter last name"
+                  placeholder={t("form.placeholder.lastname")}
                   value={input.lastname}
                   onChange={inputHandler("lastname")}
                 />
@@ -99,7 +99,7 @@ function Index() {
                 className="form-row__input mobile-input"
                 data-prefix={`+${config.country_code}`}
               >
-                <label>Mobile</label>
+                <label>{t("form.label.mobile")}</label>
                 <input
                   placeholder="Enter mobile"
                   value={input.mobile}
@@ -115,11 +115,11 @@ function Index() {
           <div className="form-row">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>Gender</label>
+                <label>{t("form.label.gender")}</label>
                 <select value={input.gender} onChange={inputHandler("gender")}>
-                  <option value="">Choose Gender</option>
-                  <option value="m">Male</option>
-                  <option value="f">Female</option>
+                  <option value="">{t("form.placeholder.gender")}</option>
+                  <option value="m">{t("form.label.male")}</option>
+                  <option value="f">{t("form.label.female")}</option>
                 </select>
               </div>
               <div className="error-msg">
@@ -131,9 +131,9 @@ function Index() {
           <div className="form-row multi">
             <div className="form-row__cell">
               <div className="form-row__input">
-                <label>Date of birth</label>
+                <label>{t("form.label.dob")}</label>
                 <select onChange={inputHandler("day")} value={input.day}>
-                  <option value="">Day</option>
+                  <option value="">{t("form.label.day")}</option>
                   {dob.renderDay()}
                 </select>
               </div>
@@ -142,7 +142,7 @@ function Index() {
               <div className="form-row__input">
                 <label>&nbsp;</label>
                 <select onChange={inputHandler("month")} value={input.month}>
-                  <option value="">Month</option>
+                  <option value="">{t("form.label.month")}</option>
                   {dob.renderMonth()}
                 </select>
               </div>
@@ -151,7 +151,7 @@ function Index() {
               <div className="form-row__input">
                 <label>&nbsp;</label>
                 <select onChange={inputHandler("year")} value={input.year}>
-                  <option value="">Year</option>
+                  <option value="">{t("form.label.year")}</option>
                   {dob.renderYear()}
                 </select>
               </div>
@@ -161,7 +161,7 @@ function Index() {
           </div>
 
           <div className="form__submit p-relative">
-            <Button>UPDATE</Button>
+            <Button>{t("button.update")}</Button>
             {updateProfile.status.loading && <LoadingBtn />}
           </div>
         </Form>

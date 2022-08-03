@@ -44,7 +44,7 @@ function Index() {
         ) : (
           <ul className="orders">
             {orderHistories.map((order) => (
-              <li className="order" key={`order-${order.id}`}>
+              <li className="order" key={`order-${order.sn}`}>
                 <div className="order__header">
                   <div className="order__order_sn">ORDER #{order.sn}</div>
                   <div className="order__status">
@@ -150,10 +150,10 @@ function Index() {
                   </div>
 
                   <ul className="order-items">
-                    {order.items.map((item) => (
+                    {order.items.map((item, j) => (
                       <RowItem
                         className="order_item"
-                        key={`item-${order.id}-${item.id}`}
+                        key={`item-${order.sn}-${j}`}
                       >
                         <div className="item__image">
                           <img

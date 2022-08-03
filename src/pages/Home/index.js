@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { StyledHome } from "./style";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import { scrollTo } from "../../utils";
@@ -149,49 +149,23 @@ function Home() {
       <div id="enhancement" className="enhancement-section">
         <div className="enhancement-section__inner-wrapper container">
           <h2 className="enhancement-section__title">
-            ENCHANCING YOUR DAILY RITUAL
+            {t("page.home.section.enhancement.title")}
           </h2>
 
           <Slider {...enhancementSettings} className="enhancement__list">
-            <div className="enhancement__item">
-              <img src="/images/home/smarter-choice.svg" alt="SMARTER CHOICE" />
-              <h3>SMARTER CHOICE</h3>
-              <p>
-                Hunn Model M promises accessible technology, catering to those
-                who wish to retain their lifestyle with greater convenience.
-              </p>
-            </div>
-
-            <div className="enhancement__item">
-              <img
-                src="/images/home/easy-alternative.svg"
-                alt="EASY ALTERNATIVVE"
-              />
-              <h3>EASY ALTERNATIVE</h3>
-              <p>
-                We seek to provide a seamless transition into an alternative
-                tobacco experience, improving it by reducing unpleasant smells
-                and use of flame.
-              </p>
-            </div>
-
-            <div className="enhancement__item">
-              <img
-                src="/images/home/heated-tobacco-technology.svg"
-                alt="HEATED TOBACCO TECHNOLOGY"
-              />
-              <h3>HEATED TOBACCO TECHNOLOGY</h3>
-              <p>
-                Designed with an induction pin which heats our exclusive tobacco
-                sticks evenly, we bring forward a well-rounded taste of tobacco
-                delivered to its maximum potential. ​
-              </p>
-            </div>
+            {t("page.home.section.enhancement.items", {
+              returnObjects: true,
+            }).map((el, i) => (
+              <div key={`enhancement-item-${i}`} className="enhancement__item">
+                <img src={el.icon} alt={el.label} />
+                <h3>{el.label}</h3>
+                <p>{el.desc}</p>
+              </div>
+            ))}
           </Slider>
 
           <p className="enhancement-section__description">
-            With an easy-to-clean, compact design, Model M provides stylish
-            control of your experience with the touch of a single button.
+            {t("page.home.section.enhancement.desc")}
           </p>
         </div>
       </div>
@@ -246,32 +220,18 @@ function Home() {
       <div className="specs-section">
         <div className="specs-container">
           <ul className="specs-list">
-            <li>
-              <img src="/images/home/ic_charge.svg" alt="FAST CHARGING" />
-              <h3>FAST CHARGING</h3>
-            </li>
-
-            <li>
-              <img src="/images/home/ic_clean.svg" alt="EASY CLEANING" />
-              <h3>EASY CLEANING</h3>
-            </li>
-
-            <li>
-              <img src="/images/home/ic_heats.svg" alt="HEATS EVENLY" />
-              <h3>HEATS EVENLY</h3>
-            </li>
-
-            <li>
-              <img src="/images/home/ic_time.svg" alt="READY IN 20 SECONDS" />
-              <h3>READY IN 20 SECONDS</h3>
-            </li>
+            {t("page.home.section.specs.items", {
+              returnObjects: true,
+            }).map((el, i) => (
+              <li key={`spec-item-${i}`}>
+                <img src={el.icon} alt={el.label} />
+                <h3>{el.label}</h3>
+              </li>
+            ))}
           </ul>
 
           <p className="specs-section__description">
-            Designed for comfort and safety, the Hunn Model M is equipped with a
-            protective casing to provide an additional layer against heat or
-            scratches. Our induction pin ensures your every moment is
-            evenly-heated, delivering maximum flavour in every puff.
+            {t("page.home.section.specs.desc")}
           </p>
         </div>
       </div>
@@ -288,17 +248,18 @@ function Home() {
             />
           </div>
           <div className="description-section">
-            <div className="deal__badge">SPECIAL DEAL</div>
-            <h3>LIMITED TIME PURCHASE</h3>
+            <div className="deal__badge">
+              {t("page.home.section.deal.badge")}
+            </div>
+            <h3>{t("page.home.section.deal.title")}</h3>
             <p>
-              As part of our launch, our Hunn Model M Starter Pack, consisiting
-              of one device and two exclusive, complimentary gifts (worth RM
-              108), is available at the discounted price of{" "}
-              <span className="important">RM 59.90</span>.
+              <Trans i18nKey="page.home.section.deal.desc">
+                <span className="important">RM 59.90</span>
+              </Trans>
             </p>
 
             <Link to="/shop" className="buy-btn">
-              BUY NOW
+              {t("button.buy-now")}
             </Link>
           </div>
         </div>
@@ -306,15 +267,17 @@ function Home() {
 
       <div className="lets-get-started-section">
         <div className="container">
-          <h3>LET'S GET STARTED</h3>
+          <h3>{t("page.home.section.get-started.title")}</h3>
           <div className="lets-get-started__text">
-            <span>Discover Your Hunn</span>
-            <span>Keep it Clean</span>
-            <span>Plug & Go</span>
+            {t("page.home.section.get-started.items", {
+              returnObjects: true,
+            }).map((el, i) => (
+              <span key={`get-started-text-${i}`}>{el}</span>
+            ))}
           </div>
 
           <Link to="/lets-get-started" className="lets-get-started__learn-more">
-            Learn More{" "}
+            {t("button.learn-more")}{" "}
             <img src="/images/icons/arrow.svg" width="14" height="14" />
           </Link>
         </div>
@@ -322,41 +285,42 @@ function Home() {
 
       <div id="contact-us" className="contact-us-section">
         <div className="container">
-          <h2 className="contact-us-section__title">HERE TO HELP</h2>
+          <h2 className="contact-us-section__title">
+            {t("page.home.section.contact-us.title")}
+          </h2>
 
           <p className="contact-us-section__description">
-            Our Hunn Customer Care team will be happy to assist with any
-            questions.
+            {t("page.home.section.contact-us.desc")}
           </p>
 
           <ul className="contact-list">
-            <li>
-              <a href="tel: 1800884866">
-                <img src="/images/home/call.svg" height="27" alt="call" />
-                <h3>Hunn Hotline</h3>
-              </a>
+            {t("page.home.section.contact-us.items", {
+              returnObjects: true,
+            }).map((el, i) => (
+              <li key={`contact-us-item-${i}`}>
+                <a
+                  href={(() => {
+                    switch (el.action.type) {
+                      case "call":
+                        return `tel: ${el.action.param}`;
+                      case "email":
+                        return `mailto: ${el.action.param}`;
+                      default:
+                        break;
+                    }
+                  })()}
+                >
+                  <img src={el.icon} height="27" alt={el.label} />
+                  <h3>{el.label}</h3>
+                </a>
 
-              <p>
-                1800-88-4866 <br />
-                9AM to 1PM, 2PM to 6PM(UTC +8)
-                <br />
-                Monday to Friday
-                <br />
-                Closed Saturday, Sunday and Public Holidays
-              </p>
-            </li>
-
-            <li>
-              <a href="mailto:cs@my.hunn-international.com">
-                <img src="/images/home/email.svg" height="27" alt="email" />
-                <h3>Write to Us</h3>
-              </a>
-
-              <p>
-                Via email <br />
-                cs@my.hunn-international.com
-              </p>
-            </li>
+                <div className="contact-us__desc">
+                  {el.desc.map((text, j) => (
+                    <div key={`contact-us-text-${i}-${j}`}>{text}</div>
+                  ))}
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

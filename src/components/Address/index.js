@@ -106,9 +106,9 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                 <div className="form-row">
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>First name</label>
+                      <label>{t("form.label.firstname")}</label>
                       <input
-                        placeholder="Enter first name"
+                        placeholder={t("form.placeholder.firstname")}
                         value={input?.firstname || ""}
                         onChange={inputHandler("firstname")}
                       />
@@ -121,9 +121,9 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
 
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>Last name</label>
+                      <label>{t("form.label.lastname")}</label>
                       <input
-                        placeholder="Enter last name"
+                        placeholder={t("form.placeholder.lastname")}
                         value={input?.lastname || ""}
                         onChange={inputHandler("lastname")}
                       />
@@ -141,9 +141,9 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       className="form-row__input mobile-input"
                       data-prefix={`+${config.country_code}`}
                     >
-                      <label>Mobile</label>
+                      <label>{t("form.label.mobile")}</label>
                       <input
-                        placeholder="Enter mobile"
+                        placeholder={t("form.placeholder.mobile")}
                         value={input?.mobile || ""}
                         onChange={inputHandler("mobile")}
                       />
@@ -158,10 +158,10 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                 <div className="form-row">
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>Address</label>
+                      <label>{t("form.label.address")}</label>
                       <textarea
                         rows={4}
-                        placeholder="Enter Address"
+                        placeholder={t("form.placeholder.address")}
                         value={input?.address || ""}
                         onChange={inputHandler("address")}
                       />
@@ -227,12 +227,14 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                 <div className="form-row">
                   <div className="form-row__cell">
                     <div className="form-row__input">
-                      <label>Zipcode</label>
+                      <label>{t("form.label.zipcode")}</label>
                       <select
                         value={input?.zipcode || ""}
                         onChange={inputHandler("zipcode")}
                       >
-                        <option value="">zipcode</option>
+                        <option value="">
+                          {t("form.placeholder.zipcode")}
+                        </option>
 
                         {adls?.[input?.adl1]?.[input?.adl2]?.["NA"]?.["NA"]
                           .data &&
@@ -256,7 +258,9 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
 
                 <div className="form__submit">
                   <div className="p-relative">
-                    <Button>{input?.id ? "UPDATE" : "ADD"}</Button>
+                    <Button>
+                      {input?.id ? t("button.update") : t("button.add")}
+                    </Button>
                     {(createAddress.status.loading ||
                       updateAddress.status.loading) && <LoadingBtn />}
                   </div>
@@ -269,7 +273,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                         setInput(null);
                       }}
                     >
-                      CANCEL
+                      {t("button.cancel")}
                     </Button>
                   </div>
                 </div>
@@ -279,8 +283,14 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
             <animated.div style={styles}>
               {!addresses || _size(addresses) === 0 ? (
                 <div className="no-result">
-                  <h2 className="no-result-header">Nothing here yet</h2>
-                  <p>Would you like to add an address?</p>
+                  <h2 className="no-result-header">
+                    {t("page.account.section.address.nothing-here-yet")}
+                  </h2>
+                  <p>
+                    {t(
+                      "page.account.section.address.would-you-like-to-add-an-address"
+                    )}
+                  </p>
                 </div>
               ) : (
                 <ul className="addresses">
@@ -304,14 +314,14 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                               setInput(el);
                             }}
                           >
-                            Edit
+                            {t("button.edit")}
                           </li>
                           <li
                             onClick={() => {
                               deleteAddress.action(el.id);
                             }}
                           >
-                            Delete
+                            {t("button.delete")}
                           </li>
                         </ul>
                       </div>
@@ -347,7 +357,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                   >
                     +{" "}
                     <span style={{ textDecoration: "underline" }}>
-                      Add new address
+                      {t("button.add-new-address")}
                     </span>
                   </div>
                 </div>
@@ -359,7 +369,7 @@ function Index({ cb = null, selectedId = null, fullWidth = false }) {
                       setInput(INITIAL_STATE);
                     }}
                   >
-                    ADD ADDRESS
+                    {t("button.add-address")}
                   </Button>
                 </div>
               )}
