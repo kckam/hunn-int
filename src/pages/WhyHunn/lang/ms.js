@@ -1,6 +1,6 @@
 let data = [
   {
-    header: "SIMPLE",
+    header: "MS NOT READY SIMPLE",
     image: {
       lg: "/images/why-hunn/img1-lg.jpg",
       md: "/images/why-hunn/img1-md.jpg",

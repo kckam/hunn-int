@@ -96,8 +96,7 @@ export default function Index() {
           </div>
 
           <p className="footer__copyright">
-            © {new Date().getFullYear()} Paris Tobacco International All Rights
-            Reserved
+            © {new Date().getFullYear()} Paris Tobacco International All Rights Reserved
           </p>
         </div>
       </Styled>
